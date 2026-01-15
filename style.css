@@ -1,0 +1,336 @@
+/* 1. VARIÁVEIS E CONFIGURAÇÃO GERAL */
+:root {
+    --cor-fundo: #fdf2f0; /* Rosado pele suave */
+    --cor-destaque: #8b4513; /* Marrom terroso luxo */
+    --cor-texto: #5d4037;
+    --cor-clara: #ffffff;
+    --cor-acento: linear-gradient(to right, #b08d57, #d4a373); /* Dourado gradiente */
+    --fonte-principal: 'Playfair Display', serif; /* Essencial para o luxo */
+    --fonte-secundaria: 'Poppins', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--fonte-secundaria);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    padding-top: 50px; /* compensa a topbar fixa */
+    scroll-behavior: smooth;
+}
+
+/* 2. TIPOGRAFIA */
+h1, h2, h3 {
+    font-family: var(--fonte-principal);
+    color: var(--cor-destaque);
+    margin-top: 0;
+}
+
+/* 3. CABEÇALHO (TOPBAR) */
+.topbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 10px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    z-index: 1000;
+}
+
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.topbar .logo {
+    font-family: 'Playfair Display', serif;
+    /* ALTERADO: De 1.8rem para 2.2rem */
+    font-size: 2.2rem; 
+    font-weight: bold;
+    color: #8b4513;
+}
+
+.topbar nav {
+    display: flex;
+    align-items: center;
+    gap: 35px; 
+}
+
+.topbar nav a {
+    text-decoration: none;
+    color: #3e3e3e;
+    /* ALTERADO: Adicionado tamanho de fonte maior (1.1rem ou 1.2rem) */
+    font-size: 1.2rem;
+    font-weight: 500;
+    /* OPCIONAL: Adicionado um leve espaçamento entre letras */
+    letter-spacing: 0.5px;
+    transition: 0.3s;
+}
+
+.btn-header {
+    background: #c6a67d;
+    color: white !important;
+    /* AJUSTADO: Padding levemente maior para o botão não parecer pequeno */
+    padding: 12px 25px;
+    border-radius: 5px;
+    /* ALTERADO: Fonte do botão maior também */
+    font-size: 1.1rem;
+}
+
+/* 4. SEÇÕES GERAIS */
+.section {
+    padding: 80px 10%;
+    background-color: var(--cor-clara);
+    margin: 20px auto;
+    max-width: 1200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+/* Controla o link que envolve a imagem */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 2000; /* Garante que fique acima de tudo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Controla o tamanho da imagem em si */
+.img-whatsapp {
+    width: 35px; /* Define o tamanho real do ícone */
+    height: 35px;
+}
+/* 5. HERO SECTION */
+.hero-section {
+    background-image: url('IMG/background.png'); 
+    background-size: cover;
+    background-position: center right; /* Ajusta para a esteticista aparecer bem à direita */
+    background-repeat: no-repeat;
+    min-height: 90vh; /* Ocupa quase a tela toda */
+    display: flex;
+    align-items: center; /* Centraliza o texto verticalmente */
+    position: relative;
+    padding-top: 0;   /* Zeramos o padding do topo da seção */
+    margin-top: 0;
+}
+
+/* Criamos um container para o texto não ocupar a tela toda */
+.hero-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 600px;
+    /* Se quiser levar o texto mais para a ESQUERDA: */
+    margin-left:-350px ; 
+    margin-right: auto; 
+/* Se quiser afastar ele da borda da tela, use padding: */
+    padding-left: 2%; 
+    text-align: left;
+}
+
+.hero-container {
+    display: flex;
+    justify-content: flex-start; /* Alinha o conteúdo no início (esquerda) */
+    align-items: center;
+    width: 100%;
+}
+
+.hero-text h1 {
+    margin-top: 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #8b4513;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    
+}
+.hero-text h1 span {
+   display: block;/*  Faz a segunda parte do título descer */
+    font-weight: 900;
+}
+
+.hero-text p {
+    font-size: 1.3rem;
+    color: #5d4037;
+    margin-bottom: 35px;
+    max-width: 600px;
+}
+
+/* Botão padrão igual ao Fale Conosco mas com ícone */
+.btn-hero-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(to right, #b08d57, #d4a373);
+    color: white !important;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 10px 20px rgba(176, 141, 87, 0.3);
+    transition: 0.3s;
+}
+
+.btn-hero-whatsapp img {
+    width: 50px; /* Tamanho do ícone controlado */
+}
+
+.btn-hero-whatsapp:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.1);
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 768px) {
+    .hero-section {
+        background-position: 70%; /* Ajusta o fundo no mobile */
+        text-align: center;
+    }
+    .hero-text {
+        margin: 0 auto;
+    }
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* 6. BOTÕES */
+.btn {
+    display: inline-block;
+    padding: 16px 35px;
+    background: var(--cor-acento);
+    color: white !important;
+    border-radius: 50px; /* Botão arredondado */
+    text-decoration: none;
+    font-weight: 600;
+    font-family: var(--fonte-secundaria);
+    transition: 0.3s;
+    border: none;
+    box-shadow: 0 10px 20px rgba(176, 141, 87, 0.3);
+}
+.btn:hover {
+    background-color: #8e6843;
+    transform: translateY(-2px);
+}
+
+/* 7. VÍDEO E GALERIA */
+.instagram-video {
+    max-width: 540px;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.grid img {
+    width: 100%;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+/* 8. FORMULÁRIO */
+#leadForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#leadForm input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* 9. RESPONSIVIDADE (MOBILE) */
+@media (max-width: 768px) {
+    /* --- AJUSTES DO CABEÇALHO --- */
+    .topbar .logo .logo-text {
+        display: none; /* Some o texto longo */
+    }
+
+    .topbar .logo .logo-icon-mobile {
+        display: block; /* Aparece só o "H" */
+        font-family: 'Playfair Display', serif;
+        font-size: 2.2rem;
+        color: #8b4513;
+        font-weight: bold;
+    }
+
+    .menu-toggle {
+        display: flex; /* Mostra as 3 barrinhas */
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Escondido */
+        width: 80%;
+        height: 100vh;
+        background-color: #fff;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        transition: 0.5s;
+        box-shadow: -10px 0 20px rgba(0,0,0,0.1);
+    }
+
+    .nav-menu.active {
+        right: 0; /* Abre o menu */
+    }
+
+    /* --- AJUSTES DA HERO --- */
+    .hero-section {
+        background-position: 80% center; /* Ajusta a foto das modelos */
+        padding-top: 120px;
+        min-height: auto;
+        padding-bottom: 50px;
+    }
+
+    .hero-text {
+        padding-left: 0;
+        text-align: center;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .hero-text h1 {
+        font-size: 2.2rem; /* Letra menor para não vazar */
+        margin-bottom: 15px;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+        padding: 0 10%;
+    }
+}
