@@ -145,13 +145,15 @@ h1, h2, h3 {
 
 .hero-text {
     flex: 1;
-    max-width: 900px; 
+    max-width: 950px; 
     margin-left: 0;
-    margin-right: auto;
-    padding-left: 0; 
-    text-align: left;
-    z-index: 2;
     position: relative;
+    left: -80px; 
+    z-index: 2;
+    text-align: left;
+    /* Efeito de sombra para dar leitura sem mudar a cor luxo */
+    text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.9), 
+                 -1px -1px 0px rgba(255, 255, 255, 0.4);
 }
 
 .hero-container {
@@ -165,49 +167,68 @@ h1, h2, h3 {
 .hero-text h1 {
     margin-top: 0;
     font-family: 'Playfair Display', serif;
-    font-size: 3rem; /* Tamanho que você já estava usando */
+    font-size: 3.5rem;
     color: #8b4513;
-    line-height: 1.2; /* Aumenta um pouco o espaço entre as linhas que você quebrou */
+    line-height: 1.1;
     margin-bottom: 20px;
-    max-width: 800px; /* Garante que ele tenha espaço para se espalhar na horizontal */
+    /* Reforça a sombra no título principal */
+    text-shadow: 3px 3px 10px rgba(255, 255, 255, 1);
 }
-
 .hero-text h1 span {
    display: block;/*  Faz a segunda parte do título descer */
     font-weight: 900;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8), 
+                 -1px -1px 0px rgba(255, 255, 255, 0.5);
+    color: #8b4513; /* Mantém o marrom luxo */
 }
+
 
 .hero-text p {
     font-size: 1.3rem;
     color: #5d4037;
     margin-bottom: 35px;
     max-width: 600px;
+    font-weight: 500; /* Deixa o texto um pouco mais "grosso" para ler melhor */
 }
 
-/* Botão padrão igual ao Fale Conosco mas com ícone */
+/* FORÇANDO O ESTILO DO BOTÃO */
 .btn-hero-whatsapp {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    background: linear-gradient(to right, #b08d57, #d4a373);
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    background: linear-gradient(to right, #b08d57, #d4a373) !important;
     color: white !important;
-    padding: 15px 30px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-    font-family: 'Poppins', sans-serif;
-    box-shadow: 0 10px 20px rgba(176, 141, 87, 0.3);
-    transition: 0.3s;
+    padding: 12px 25px !important;
+    border-radius: 50px !important;
+    text-decoration: none !important;
+    font-weight: bold !important;
+    font-size: 1.1rem !important;
+    width: fit-content !important;
+    margin-top: 20px !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
 }
 
-.btn-hero-whatsapp img {
-    width: 50px; /* Tamanho do ícone controlado */
+/* Trava o ícone para ele nunca mais explodir */
+.img-icon-fix {
+    width: 25px !important;
+    height: 25px !important;
+    object-fit: contain !important;
+    display: block !important;
 }
 
+/* Garante que o link não fique azul ao ser clicado */
+a.btn-hero-whatsapp:visited, 
+a.btn-hero-whatsapp:active, 
+a.btn-hero-whatsapp:hover {
+    color: #ffffff !important;
+    text-decoration: none !important;
+}     
 .btn-hero-whatsapp:hover {
     transform: translateY(-3px);
     filter: brightness(1.1);
 }
+
 
 /* Ajuste para telas menores */
 @media (max-width: 768px) {
@@ -321,6 +342,10 @@ h1, h2, h3 {
         padding-top: 120px;
         min-height: auto;
         padding-bottom: 50px;
+        background: linear-gradient(to right, rgba(253, 242, 240, 0.9), rgba(253, 242, 240, 0.2)), 
+                    url('IMG/background.png');
+        background-size: cover;
+        background-position: center;
     }
 
     .hero-text {
