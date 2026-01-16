@@ -301,37 +301,41 @@ a.btn-hero-whatsapp:hover {
 /* 9. RESPONSIVIDADE (MOBILE) */
 @media (max-width: 768px) {
 /* --- AJUSTE FINO DE LUXO (MOBILE) --- */
+    /* --- AJUSTE DE CONTRASTE MOBILE (VERSÃO FINAL) --- */
+@media (max-width: 768px) {
     div.hero-text {
-        background: transparent !important; /* Remove o bloco branco que ficou feio */
-        backdrop-filter: none !important;
+        background: transparent !important; /* Remove o bloco branco */
         padding: 0 20px !important;
         margin: 0 !important;
         text-align: center !important;
+        width: 100% !important;
     }
 
     div.hero-text h1 {
-        color: #8b4513 !important;
+        color: #885836 !important; /* Garante o marrom */
         font-size: 2.1rem !important;
         line-height: 1.2 !important;
-        /* Em vez de fundo branco, usamos uma "aura" branca em volta da letra */
-        text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.9), 
-                     0px 0px 5px rgba(255, 255, 255, 0.8) !important;
+        /* Cria uma "aura" branca em volta de cada letra para destacar do fundo */
+        text-shadow: 
+            -2px -2px 5px rgba(255, 255, 255, 1), 
+             2px -2px 5px rgba(255, 255, 255, 1),
+            -2px  2px 5px rgba(255, 255, 255, 1),
+             2px  2px 5px rgba(255, 255, 255, 1) !important;
     }
 
     div.hero-text p {
         color: #4e342e !important;
-        font-weight: 500 !important;
-        text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.9) !important;
+        font-weight: 600 !important; /* Letra um pouco mais grossa para leitura */
+        text-shadow: 0px 0px 8px rgba(255, 255, 255, 1) !important;
     }
 
-    /* Melhora a visibilidade da foto sem esconder as modelos */
     section.hero-section {
-        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), transparent 50%), 
+        /* Clareia um pouco mais a imagem de fundo no mobile para ajudar as letras */
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), transparent 60%), 
                     url('IMG/background.png') !important;
-        background-position: 75% center !important;
+        background-position: 80% center !important;
     }
-    
-
+}
     /* --- AJUSTES DO CABEÇALHO --- */
     .topbar .logo .logo-text {
         display: none; /* Some o texto longo */
