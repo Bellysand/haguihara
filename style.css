@@ -141,12 +141,14 @@ h1, h2, h3 {
 
 .hero-text {
     flex: 1;
-    max-width: 800px; /* Texto longo e elegante */
-    margin-left: 5%;  /* Recuo seguro da borda esquerda */
+    max-width: 850px; 
+    margin-left: 2%;  
     margin-right: auto; 
-    text-align: left;
     z-index: 2;
+    position: relative;
+    text-align: left;
 }
+
 .hero-container {
     display: flex;
     justify-content: flex-start; /* Alinha o conteúdo no início (esquerda) */
