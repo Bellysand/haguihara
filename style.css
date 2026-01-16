@@ -300,35 +300,37 @@ a.btn-hero-whatsapp:hover {
 
 /* 9. RESPONSIVIDADE (MOBILE) */
 @media (max-width: 768px) {
-    /* --- AJUSTE DE CONTRASTE MOBILE --- */
-    /* Usando nomes compostos para forçar o navegador a aceitar */
-    section.hero-section {
-        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4)), 
-                    url('IMG/background.png') !important;
-        background-position: center !important;
-        padding-top: 100px !important;
-    }
-
+/* --- AJUSTE FINO DE LUXO (MOBILE) --- */
     div.hero-text {
-        background: rgba(255, 255, 255, 0.8) !important; /* Força o fundo branco atrás do texto */
-        padding: 20px !important;
-        border-radius: 15px !important;
-        margin: 0 10px !important;
-        backdrop-filter: blur(5px) !important;
+        background: transparent !important; /* Remove o bloco branco que ficou feio */
+        backdrop-filter: none !important;
+        padding: 0 20px !important;
+        margin: 0 !important;
+        text-align: center !important;
     }
 
     div.hero-text h1 {
-        color: #8b4513 !important; /* Força o marrom no título */
-        font-size: 1.8rem !important;
-        text-shadow: none !important;
-        display: block !important;
+        color: #8b4513 !important;
+        font-size: 2.1rem !important;
+        line-height: 1.2 !important;
+        /* Em vez de fundo branco, usamos uma "aura" branca em volta da letra */
+        text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.9), 
+                     0px 0px 5px rgba(255, 255, 255, 0.8) !important;
     }
 
     div.hero-text p {
-        color: #5d4037 !important; /* Força o marrom escuro no parágrafo */
-        font-size: 1rem !important;
-        display: block !important;
+        color: #4e342e !important;
+        font-weight: 500 !important;
+        text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.9) !important;
     }
+
+    /* Melhora a visibilidade da foto sem esconder as modelos */
+    section.hero-section {
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), transparent 50%), 
+                    url('IMG/background.png') !important;
+        background-position: 75% center !important;
+    }
+    
 
     /* --- AJUSTES DO CABEÇALHO --- */
     .topbar .logo .logo-text {
