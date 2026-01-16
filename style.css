@@ -335,33 +335,45 @@ a.btn-hero-whatsapp:hover {
     .nav-menu.active {
         right: 0; /* Abre o menu */
     }
-
-    /* --- AJUSTES DA HERO --- */
+/* --- AJUSTES DA HERO (VERSÃO CORRIGIDA) --- */
     .hero-section {
-        background-position: 80% center; /* Ajusta a foto das modelos */
+        background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3)), 
+                    url('IMG/background.png') !important;
+        background-size: cover !important;
+        background-position: 80% center !important; /* Mantém as modelos visíveis */
         padding-top: 120px;
-        min-height: auto;
-        padding-bottom: 50px;
-        background: linear-gradient(to right, rgba(253, 242, 240, 0.9), rgba(253, 242, 240, 0.2)), 
-                    url('IMG/background.png');
-        background-size: cover;
-        background-position: center;
+        padding-bottom: 60px;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
     }
 
     .hero-text {
-        padding-left: 0;
+        padding: 25px !important;
         text-align: center;
-        width: 100%;
-        max-width: 100%;
+        width: auto !important;
+        margin: 0 20px !important;
+        /* Efeito de Vidro Fosco */
+        background: rgba(255, 255, 255, 0.7) !important; 
+        backdrop-filter: blur(10px); 
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.05);
     }
 
     .hero-text h1 {
-        font-size: 2.2rem; /* Letra menor para não vazar */
-        margin-bottom: 15px;
+        font-size: 2rem !important; /* Ajuste para não quebrar feio */
+        line-height: 1.2 !important;
+        color: #8b4513 !important;
+        text-shadow: none !important; /* Remove a sombra no mobile para ficar clean */
     }
 
     .hero-text p {
-        font-size: 1rem;
-        padding: 0 10%;
+        font-size: 1.1rem !important;
+        padding: 0;
+        color: #5d4037 !important;
     }
-}
+
+    .btn-hero-whatsapp {
+        margin: 20px auto 0 !important; /* Centraliza o botão no mobile */
+        display: inline-flex !important;
+    }}
