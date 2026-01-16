@@ -300,47 +300,34 @@ a.btn-hero-whatsapp:hover {
 
 /* 9. RESPONSIVIDADE (MOBILE) */
 @media (max-width: 768px) {
-    /* --- AJUSTES DA HERO (VERSÃO CORRIGIDA) --- */
-    .hero-section {
-        background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3)), 
+    /* --- AJUSTE DE CONTRASTE MOBILE --- */
+    /* Usando nomes compostos para forçar o navegador a aceitar */
+    section.hero-section {
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4)), 
                     url('IMG/background.png') !important;
-        background-size: cover !important;
-        background-position: 80% center !important; /* Mantém as modelos visíveis */
-        padding-top: 120px;
-        padding-bottom: 60px;
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
+        background-position: center !important;
+        padding-top: 100px !important;
     }
 
-    .hero-text {
-        padding: 25px !important;
-        text-align: center;
-        width: auto !important;
-        margin: 0 20px !important;
-        /* Efeito de Vidro Fosco */
-        background: rgba(255, 255, 255, 0.7) !important; 
-        backdrop-filter: blur(10px); 
-        border-radius: 20px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    div.hero-text {
+        background: rgba(255, 255, 255, 0.8) !important; /* Força o fundo branco atrás do texto */
+        padding: 20px !important;
+        border-radius: 15px !important;
+        margin: 0 10px !important;
+        backdrop-filter: blur(5px) !important;
     }
 
-    .hero-text h1 {
-        font-size: 2rem !important; /* Ajuste para não quebrar feio */
-        line-height: 1.2 !important;
-        color: #8b4513 !important;
-        text-shadow: none !important; /* Remove a sombra no mobile para ficar clean */
+    div.hero-text h1 {
+        color: #8b4513 !important; /* Força o marrom no título */
+        font-size: 1.8rem !important;
+        text-shadow: none !important;
+        display: block !important;
     }
 
-    .hero-text p {
-        font-size: 1.1rem !important;
-        padding: 0;
-        color: #5d4037 !important;
-    }
-
-    .btn-hero-whatsapp {
-        margin: 20px auto 0 !important; /* Centraliza o botão no mobile */
-        display: inline-flex !important;
+    div.hero-text p {
+        color: #5d4037 !important; /* Força o marrom escuro no parágrafo */
+        font-size: 1rem !important;
+        display: block !important;
     }
 
     /* --- AJUSTES DO CABEÇALHO --- */
