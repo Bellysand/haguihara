@@ -376,4 +376,5 @@ a.btn-hero-whatsapp:hover {
     .btn-hero-whatsapp {
         margin: 20px auto 0 !important; /* Centraliza o botão no mobile */
         display: inline-flex !important;
-    }}
+    }
+}
