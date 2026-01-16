@@ -300,42 +300,7 @@ a.btn-hero-whatsapp:hover {
 
 /* 9. RESPONSIVIDADE (MOBILE) */
 @media (max-width: 768px) {
-    /* --- AJUSTES DO CABEÇALHO --- */
-    .topbar .logo .logo-text {
-        display: none; /* Some o texto longo */
-    }
-
-    .topbar .logo .logo-icon-mobile {
-        display: block; /* Aparece só o "H" */
-        font-family: 'Playfair Display', serif;
-        font-size: 2.2rem;
-        color: #8b4513;
-        font-weight: bold;
-    }
-
-    .menu-toggle {
-        display: flex; /* Mostra as 3 barrinhas */
-    }
-
-    .nav-menu {
-        position: fixed;
-        top: 0;
-        right: -100%; /* Escondido */
-        width: 80%;
-        height: 100vh;
-        background-color: #fff;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 30px;
-        transition: 0.5s;
-        box-shadow: -10px 0 20px rgba(0,0,0,0.1);
-    }
-
-    .nav-menu.active {
-        right: 0; /* Abre o menu */
-    }
-/* --- AJUSTES DA HERO (VERSÃO CORRIGIDA) --- */
+    /* --- AJUSTES DA HERO (VERSÃO CORRIGIDA) --- */
     .hero-section {
         background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3)), 
                     url('IMG/background.png') !important;
@@ -376,5 +341,41 @@ a.btn-hero-whatsapp:hover {
     .btn-hero-whatsapp {
         margin: 20px auto 0 !important; /* Centraliza o botão no mobile */
         display: inline-flex !important;
+    }
+
+    /* --- AJUSTES DO CABEÇALHO --- */
+    .topbar .logo .logo-text {
+        display: none; /* Some o texto longo */
+    }
+
+    .topbar .logo .logo-icon-mobile {
+        display: block; /* Aparece só o "H" */
+        font-family: 'Playfair Display', serif;
+        font-size: 2.2rem;
+        color: #8b4513;
+        font-weight: bold;
+    }
+
+    .menu-toggle {
+        display: flex; /* Mostra as 3 barrinhas */
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Escondido */
+        width: 80%;
+        height: 100vh;
+        background-color: #fff;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        transition: 0.5s;
+        box-shadow: -10px 0 20px rgba(0,0,0,0.1);
+    }
+
+    .nav-menu.active {
+        right: 0; /* Abre o menu */
     }
 }
