@@ -141,14 +141,23 @@ h1, h2, h3 {
 
 .hero-text {
     flex: 1;
-    max-width: 600px;
-    /* Se quiser levar o texto mais para a ESQUERDA: */
-    margin-left:-350px ; 
+    /* 1. Definimos uma largura máxima grande para o texto não virar coluna */
+    max-width: 800px; 
+    
+    /* 2. Usamos margem automática na direita para empurrar tudo para a esquerda */
     margin-right: auto; 
-/* Se quiser afastar ele da borda da tela, use padding: */
+    
+    /* 3. Ajuste este valor para afastar o texto da borda esquerda da tela */
+    margin-left: 20px; 
+    
+    /* 4. O padding ajuda a dar um respiro interno */
     padding-left: 2%; 
+    
     text-align: left;
+    z-index: 2;
+    position: relative;
 }
+
 
 .hero-container {
     display: flex;
