@@ -225,7 +225,7 @@ a.btn-hero-whatsapp:hover {
     text-decoration: none !important;
 }     
 .btn-hero-whatsapp:hover {
-    align-items: center;
+    
     transform: translateY(-3px);
     filter: brightness(1.1);
 }
@@ -312,8 +312,12 @@ a.btn-hero-whatsapp:hover {
         text-shadow: 0px 0px 10px rgba(255, 255, 255, 1) !important;
     }
 
+    /* --- AJUSTE FINAL: CENTRALIZAÇÃO DO BOTÃO NO MOBILE --- */
     .btn-hero-whatsapp {
-        margin: 20px auto 0 !important; /* Centraliza o botão marrom */
-        display: inline-flex !important;
+        margin: 25px auto 0 !important; /* Centraliza horizontalmente com o 'auto' */
+        display: flex !important;       /* Garante que o botão se comporte como bloco flexível */
+        width: fit-content !important;  /* Faz o botão ter apenas a largura do texto */
+        align-items: center !important;
+        justify-content: center !important;
     }
 }
