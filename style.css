@@ -225,6 +225,7 @@ a.btn-hero-whatsapp:hover {
     text-decoration: none !important;
 }     
 .btn-hero-whatsapp:hover {
+    align-items: center;
     transform: translateY(-3px);
     filter: brightness(1.1);
 }
@@ -275,7 +276,7 @@ a.btn-hero-whatsapp:hover {
         flex-direction: column !important;
         justify-content: flex-start !important;
         align-items: center !important;
-        padding-top: 80px !important; /* Mantém o título onde você gostou */
+        padding-top: 150px !important; /* Mantém o título onde você gostou */
         padding-bottom: 50px !important;
         min-height: 100vh !important;
         background: linear-gradient(to bottom, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.6)), 
@@ -297,7 +298,7 @@ a.btn-hero-whatsapp:hover {
         font-size: 2rem !important;
         line-height: 1.1 !important;
         margin-top: 0 !important; /* Remove qualquer margem que empurre o título para baixo */
-        margin-bottom: 30px !important;
+        margin-bottom: 50px !important;
         text-align: center !important;
         text-shadow: 0px 0px 15px rgba(255, 255, 255, 1) !important;
     }
