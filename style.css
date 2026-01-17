@@ -276,7 +276,7 @@ a.btn-hero-whatsapp:hover {
         flex-direction: column !important;
         justify-content: flex-start !important; /* Muda de center para o topo */
         align-items: center !important;
-        padding-top: 50px !important; /* Diminuímos de 120px para 50px */
+        padding-top: 80px !important; /* Diminuímos de 120px para 50px */
         padding-bottom: 30px !important;
         min-height: 80vh !important; /* Reduzimos a altura para o texto subir */
         background-position: center !important;
@@ -296,12 +296,13 @@ a.btn-hero-whatsapp:hover {
         font-size: 2rem !important;
         line-height: 1.1 !important;
         margin-top: 0 !important; /* Remove qualquer margem que empurre o título para baixo */
-        margin-bottom: 10px !important;
+        margin-bottom: 30px !important;
         text-align: center !important;
         text-shadow: 0px 0px 15px rgba(255, 255, 255, 1) !important;
     }
 
     .hero-text p {
+        color: #8d7367;
         font-size: 1.1rem !important;
         padding: 0 !important;
         margin: 0 auto 25px auto !important;
