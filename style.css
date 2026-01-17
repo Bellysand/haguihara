@@ -231,75 +231,7 @@ a.btn-hero-whatsapp:hover {
 
 
 /* Ajuste para telas menores */
-@media (max-width: 768px) {
-    .hero-section {
-        background-position: 70%; /* Ajusta o fundo no mobile */
-        text-align: center;
-    }
-    .hero-text {
-        margin: 0 auto;
-    }
-    .hero-text h1 {
-        font-size: 2.5rem;
-    }
-}
-
-/* 6. BOTÕES */
-.btn {
-    display: inline-block;
-    padding: 16px 35px;
-    background: var(--cor-acento);
-    color: white !important;
-    border-radius: 50px; /* Botão arredondado */
-    text-decoration: none;
-    font-weight: 600;
-    font-family: var(--fonte-secundaria);
-    transition: 0.3s;
-    border: none;
-    box-shadow: 0 10px 20px rgba(176, 141, 87, 0.3);
-}
-.btn:hover {
-    background-color: #8e6843;
-    transform: translateY(-2px);
-}
-
-/* 7. VÍDEO E GALERIA */
-.instagram-video {
-    max-width: 540px;
-    margin: 0 auto;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    margin-top: 30px;
-}
-
-.grid img {
-    width: 100%;
-    border-radius: 10px;
-    transition: 0.3s;
-}
-
-/* 8. FORMULÁRIO */
-#leadForm {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-#leadForm input {
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-/* 9. RESPONSIVIDADE (MOBILE) */
-/* 9. RESPONSIVIDADE (MOBILE) - BLOCO COMPLETO PARA SUBSTITUIR */
+/* 9. RESPONSIVIDADE (MOBILE) - SUBSTITUIR DA LINHA 234 ATÉ O FIM */
 @media (max-width: 768px) {
     /* --- AJUSTES DO CABEÇALHO --- */
     .topbar .logo .logo-text {
@@ -338,15 +270,16 @@ a.btn-hero-whatsapp:hover {
     }
 
     /* --- AJUSTES DA HERO (CENTRALIZAÇÃO TOTAL) --- */
+    /* --- AJUSTES DA HERO (SUBSTITUIR) --- */
     .hero-section {
         display: flex !important;
         flex-direction: column !important;
-        justify-content: center !important;
+        justify-content: flex-start !important; /* Muda de center para o topo */
         align-items: center !important;
-        padding-top: 100px !important;
-        padding-bottom: 50px !important;
-        min-height: 100vh !important;
-        background-position: center !important; /* Centraliza a foto nas modelos */
+        padding-top: 50px !important; /* Diminuímos de 120px para 50px */
+        padding-bottom: 30px !important;
+        min-height: 80vh !important; /* Reduzimos a altura para o texto subir */
+        background-position: center !important;
         text-align: center !important;
     }
 
@@ -356,18 +289,16 @@ a.btn-hero-whatsapp:hover {
         margin: 0 auto !important;
         padding: 0 20px !important;
         width: 100% !important;
-        max-width: 100% !important;
-        text-align: center !important;
+        margin-top: -10px !important; /* Puxa o texto um pouquinho mais para cima se precisar */
     }
 
     .hero-text h1 {
-        font-size: 2.1rem !important;
-        line-height: 1.2 !important;
-        margin: 0 auto 15px auto !important;
+        font-size: 2rem !important;
+        line-height: 1.1 !important;
+        margin-top: 0 !important; /* Remove qualquer margem que empurre o título para baixo */
+        margin-bottom: 10px !important;
         text-align: center !important;
-        /* Aura branca para leitura */
-        text-shadow: 0px 0px 12px rgba(255, 255, 255, 1), 
-                     0px 0px 8px rgba(255, 255, 255, 0.8) !important;
+        text-shadow: 0px 0px 15px rgba(255, 255, 255, 1) !important;
     }
 
     .hero-text p {
@@ -375,10 +306,11 @@ a.btn-hero-whatsapp:hover {
         padding: 0 !important;
         margin: 0 auto 25px auto !important;
         text-align: center !important;
+        text-shadow: 0px 0px 10px rgba(255, 255, 255, 1) !important;
     }
 
     .btn-hero-whatsapp {
-        margin: 20px auto 0 !important;
+        margin: 20px auto 0 !important; /* Centraliza o botão marrom */
         display: inline-flex !important;
     }
 }
