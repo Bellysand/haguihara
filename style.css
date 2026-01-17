@@ -271,18 +271,21 @@ a.btn-hero-whatsapp:hover {
 
     /* --- AJUSTES DA HERO (CENTRALIZAÇÃO TOTAL) --- */
     /* --- AJUSTES DA HERO (SUBSTITUIR) --- */
+    /* --- AJUSTE DA HERO (IMAGEM MAIS TRANSPARENTE / SUAVE) --- */
     .hero-section {
         display: flex !important;
         flex-direction: column !important;
-        justify-content: flex-start !important; /* Muda de center para o topo */
+        justify-content: flex-start !important;
         align-items: center !important;
-        padding-top: 80px !important; /* Diminuímos de 120px para 50px */
-        padding-bottom: 30px !important;
-        min-height: 80vh !important; /* Reduzimos a altura para o texto subir */
+        padding-top: 80px !important; /* Mantém o título onde você gostou */
+        padding-bottom: 50px !important;
+        min-height: 100vh !important;
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.6)), 
+                    url('IMG/background.png') !important; 
+        background-size: cover !important;
         background-position: center !important;
         text-align: center !important;
     }
-
     .hero-text {
         position: static !important;
         left: 0 !important;
