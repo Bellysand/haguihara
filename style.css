@@ -269,9 +269,7 @@ a.btn-hero-whatsapp:hover {
         right: 0; 
     }
 
-    /* --- AJUSTES DA HERO (CENTRALIZAÇÃO TOTAL) --- */
-    /* --- AJUSTES DA HERO (SUBSTITUIR) --- */
-    /* --- AJUSTE DA HERO (IMAGEM MAIS TRANSPARENTE / SUAVE) --- */
+    
     .hero-section {
         display: flex !important;
         flex-direction: column !important;
