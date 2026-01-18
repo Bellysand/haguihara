@@ -320,4 +320,15 @@ a.btn-hero-whatsapp:hover {
         align-items: center !important;
         justify-content: center !important;
     }
+   
+    .topbar .logo .logo-icon-mobile {
+    display: block !important;
+}
+
+    .topbar .logo .logo-icon-mobile img {
+    height: 45px !important; /* Ajuste o tamanho aqui se achar pequeno */
+    width: auto;
+    display: block;
+    margin-top: 5px; /* Alinha verticalmente com o botão de menu */
+}
 }
