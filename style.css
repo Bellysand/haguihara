@@ -278,9 +278,9 @@ a.btn-hero-whatsapp:hover {
 
 /* 9. RESPONSIVIDADE (MOBILE) */
 @media (max-width: 768px) {
-    /* --- AJUSTES DO CABEÇALHO (FORÇANDO TEXTO) --- */
+    /* --- AJUSTES DO CABEÇALHO --- */
     .topbar {
-        padding: 8px 0 !important;
+        padding: 5px 0 !important;
         background-image: url('IMG/Background.Geral\ \(1\).png') !important;
         background-size: cover;
         min-height: 80px !important;
@@ -296,56 +296,54 @@ a.btn-hero-whatsapp:hover {
         width: 100% !important;
     }
 
-    /* Garante que o grupo da logo (imagem + texto) seja visto como um bloco único */
+    /* Alinhamento da Logo + Texto como um único bloco à esquerda */
     .logo {
         display: flex !important;
-        flex-direction: row !important; /* Força lado a lado */
+        align-items: center !important;
+        gap: 12px !important;
+    }
+
+    .logo-link {
+        display: flex !important;
         align-items: center !important;
         gap: 12px !important;
         text-decoration: none !important;
     }
 
-    /* Esconde apenas o link redundante do desktop se necessário */
-    .logo-desktop-container {
+    /* ESCONDE A LOGO DUPLICADA (SPAN) */
+    .logo-icon-mobile {
         display: none !important;
     }
 
-    .logo-icon-mobile {
-        display: flex !important;
-        align-items: center !important;
-    }
-
-    .logo-icon-mobile img {
-        height: 45px !important;
+    /* Tamanho da Flor de Lótus no mobile */
+    .img-logo-header {
+        height: 55px !important;
         width: auto !important;
         display: block !important;
     }
 
-    /* --- REFORÇO VISUAL DAS LETRAS --- */
+    /* --- REFORÇO DOS TEXTOS AO LADO DA LOGO --- */
     .logo-text-group {
-        display: flex !important; /* Força a exibição que o navegador ocultou */
+        display: flex !important; 
         flex-direction: column !important;
         justify-content: center !important;
-        visibility: visible !important;
-        opacity: 1 !important;
+        text-align: left !important;
     }
 
     .text-atelier {
         font-family: 'Playfair Display', serif !important;
-        font-size: 1.1rem !important;
-        color: #8b4513 !important; /* Marrom escuro para contraste */
+        font-size: 1.15rem !important;
+        color: #8b4513 !important;
         font-weight: bold !important;
-        line-height: 1.2 !important;
-        display: block !important;
+        line-height: 1.1 !important;
     }
 
     .text-metodo {
         font-family: 'Montserrat', sans-serif !important;
-        font-size: 0.6rem !important;
-        color: #b08d57 !important; /* Dourado */
+        font-size: 0.65rem !important;
+        color: #b08d57 !important;
         text-transform: uppercase !important;
         letter-spacing: 1px !important;
-        display: block !important;
     }
 
     /* --- MENU HAMBÚRGUER --- */
@@ -353,25 +351,23 @@ a.btn-hero-whatsapp:hover {
         display: flex !important;
         flex-direction: column !important;
         gap: 5px !important;
-        background: none !important;
-        border: none !important;
     }
 
     .menu-toggle .bar {
-        width: 25px;
+        width: 28px;
         height: 3px;
         background-color: #8b4513 !important;
-        border-radius: 2px !important;
+        border-radius: 2px;
     }
 
-    /* Mantém o menu lateral escondido */
+    /* Menu Lateral */
     .nav-menu {
         position: fixed;
         top: 0;
         right: -100%;
         width: 80%;
         height: 100vh;
-        background-color: #ffffff;
+        background-color: rgba(255, 255, 255, 0.98);
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -384,7 +380,7 @@ a.btn-hero-whatsapp:hover {
         right: 0 !important;
     }
 
-    /* --- SUA SEÇÃO HERO (MANTIDA) --- */
+    /* --- SUA SEÇÃO HERO (MANTIDA INTEGRALMENTE) --- */
     .hero-section {
         display: flex !important;
         flex-direction: column !important;
@@ -394,7 +390,7 @@ a.btn-hero-whatsapp:hover {
         padding-bottom: 50px !important;
         min-height: 100vh !important;
         background: linear-gradient(to bottom, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.6)), 
-                    url(IMG/abstract\ background\ Mobile.png) !important; 
+                    url('IMG/abstract background Mobile.png') !important; 
         background-size: cover !important;
         background-position: center !important;
         text-align: center !important;
@@ -404,16 +400,18 @@ a.btn-hero-whatsapp:hover {
         position: static !important;
         margin: 0 auto !important;
         padding: 0 20px !important;
+        width: 100% !important;
     }
 
     .hero-text h1 {
-        font-size: 2rem !important;
+        font-size: 2.1rem !important;
         line-height: 1.1 !important;
-        margin-bottom: 50px !important;
+        margin-bottom: 30px !important;
+        text-shadow: 2px 2px 10px rgba(255, 255, 255, 1) !important;
     }
 
     .hero-text p {
-        color: #8d7367;
+        color: #5d4037 !important;
         font-size: 1.1rem !important;
         margin: 0 auto 25px auto !important;
     }
@@ -421,5 +419,6 @@ a.btn-hero-whatsapp:hover {
     .btn-hero-whatsapp {
         margin: 25px auto 0 !important;
         display: flex !important;
+        width: fit-content !important;
     }
 }
