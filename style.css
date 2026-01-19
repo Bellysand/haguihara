@@ -276,77 +276,150 @@ a.btn-hero-whatsapp:hover {
     filter: brightness(1.1);
 }
 
-
-/* --- 9. RESPONSIVIDADE (MOBILE) COMPLETA --- */
+/* 9. RESPONSIVIDADE (MOBILE) */
 @media (max-width: 768px) {
-    
-    /* CABEÇALHO MOBILE */
+    /* --- AJUSTES DO CABEÇALHO (FORÇANDO TEXTO) --- */
     .topbar {
         padding: 8px 0 !important;
         background-image: url('IMG/Background.Geral\ \(1\).png') !important;
         background-size: cover;
-        min-height: 70px !important;
-        display: flex;
-        align-items: center;
+        min-height: 80px !important;
+        display: flex !important;
+        align-items: center !important;
     }
 
     .header-flex {
-        justify-content: center !important; /* Centraliza a flor no meio */
-        position: relative !important;
+        display: flex !important;
+        justify-content: space-between !important; 
+        align-items: center !important;
+        padding: 0 15px !important;
         width: 100% !important;
     }
 
-    /* Esconde a logo de texto/completa do desktop */
+    /* Garante que o grupo da logo (imagem + texto) seja visto como um bloco único */
+    .logo {
+        display: flex !important;
+        flex-direction: row !important; /* Força lado a lado */
+        align-items: center !important;
+        gap: 12px !important;
+        text-decoration: none !important;
+    }
+
+    /* Esconde apenas o link redundante do desktop se necessário */
     .logo-desktop-container {
         display: none !important;
     }
 
-    /* Mostra e centraliza o Ícone (Flor de Lótus) */
     .logo-icon-mobile {
         display: flex !important;
-        align-items: center;
-        justify-content: center;
+        align-items: center !important;
     }
 
     .logo-icon-mobile img {
-        height: 55px !important; /* Tamanho ajustado para destaque */
-        width: auto;
+        height: 45px !important;
+        width: auto !important;
+        display: block !important;
     }
 
-    /* Menu Hambúrguer alinhado à direita */
+    /* --- REFORÇO VISUAL DAS LETRAS --- */
+    .logo-text-group {
+        display: flex !important; /* Força a exibição que o navegador ocultou */
+        flex-direction: column !important;
+        justify-content: center !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    .text-atelier {
+        font-family: 'Playfair Display', serif !important;
+        font-size: 1.1rem !important;
+        color: #8b4513 !important; /* Marrom escuro para contraste */
+        font-weight: bold !important;
+        line-height: 1.2 !important;
+        display: block !important;
+    }
+
+    .text-metodo {
+        font-family: 'Montserrat', sans-serif !important;
+        font-size: 0.6rem !important;
+        color: #b08d57 !important; /* Dourado */
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+        display: block !important;
+    }
+
+    /* --- MENU HAMBÚRGUER --- */
     .menu-toggle {
         display: flex !important;
-        position: absolute !important;
-        right: 20px !important;
-        top: 50% !important;
-        transform: translateY(-50%) !important;
-        z-index: 1001;
+        flex-direction: column !important;
+        gap: 5px !important;
+        background: none !important;
+        border: none !important;
     }
 
-    /* Ajuste da Seção Hero para não ficar por baixo do cabeçalho */
+    .menu-toggle .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #8b4513 !important;
+        border-radius: 2px !important;
+    }
+
+    /* Mantém o menu lateral escondido */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background-color: #ffffff;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        transition: 0.5s;
+        z-index: 2000;
+    }
+
+    .nav-menu.active {
+        right: 0 !important;
+    }
+
+    /* --- SUA SEÇÃO HERO (MANTIDA) --- */
     .hero-section {
-        padding-top: 100px !important;
         display: flex !important;
         flex-direction: column !important;
+        justify-content: flex-start !important;
         align-items: center !important;
+        padding-top: 150px !important; 
+        padding-bottom: 50px !important;
+        min-height: 100vh !important;
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.6)), 
+                    url(IMG/abstract\ background\ Mobile.png) !important; 
+        background-size: cover !important;
+        background-position: center !important;
         text-align: center !important;
     }
 
-    /* Centralização dos textos da Hero no Mobile */
     .hero-text {
         position: static !important;
-        left: 0 !important;
         margin: 0 auto !important;
-        text-align: center !important;
+        padding: 0 20px !important;
     }
 
     .hero-text h1 {
         font-size: 2rem !important;
-        margin-bottom: 20px !important;
+        line-height: 1.1 !important;
+        margin-bottom: 50px !important;
+    }
+
+    .hero-text p {
+        color: #8d7367;
+        font-size: 1.1rem !important;
+        margin: 0 auto 25px auto !important;
     }
 
     .btn-hero-whatsapp {
-        margin: 20px auto 0 !important;
-        display: inline-flex !important;
+        margin: 25px auto 0 !important;
+        display: flex !important;
     }
 }
