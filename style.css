@@ -32,15 +32,21 @@ h1, h2, h3 {
     margin-top: 0;
 }
 
-/* 3. CABEÇALHO (TOPBAR) */
+/* --- 3. CABEÇALHO (TOPBAR) - VERSÃO LIMPA COM IMAGEM --- */
 .topbar {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 10px 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     z-index: 1000;
+    
+    /* Usando a sua imagem de fundo no cabeçalho para garantir a cor verde */
+    background-image: url('IMG/Background.Geral\ \(1\).png');
+    background-size: cover;
+    background-position: top center;
+    
+    padding: 10px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .header-flex {
@@ -52,41 +58,89 @@ h1, h2, h3 {
     padding: 0 20px;
 }
 
-.topbar .logo {
-    font-family: 'Playfair Display', serif;
-    /* ALTERADO: De 1.8rem para 2.2rem */
-    font-size: 2.2rem; 
-    font-weight: bold;
-    color: #8b4513;
-}
-
-.topbar nav {
+.logo-desktop-container {
     display: flex;
     align-items: center;
-    gap: 35px; 
+    text-decoration: none;
+    gap: 15px;
+}
+
+.img-logo-header {
+    height: 90px; /* Logo aumentada como solicitado */
+    width: auto;
+}
+
+.logo-text-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.text-atelier {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: #8b4513;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.text-metodo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    color: #b08d57;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 25px;
+}
+
+/* --- AJUSTE DE ALINHAMENTO DO MENU DESKTOP --- */
+.nav-menu {
+    display: flex !important;
+    align-items: center !important; /* Alinha verticalmente ao centro todos os itens */
+    gap: 30px !important;
+    height: 100% !important;
 }
 
 .topbar nav a {
-    text-decoration: none;
-    color: #3e3e3e;
-    /* ALTERADO: Adicionado tamanho de fonte maior (1.1rem ou 1.2rem) */
-    font-size: 1.2rem;
-    font-weight: 500;
-    /* OPCIONAL: Adicionado um leve espaçamento entre letras */
-    letter-spacing: 0.5px;
-    transition: 0.3s;
+    text-decoration: none !important;
+    color: #8b4513 !important;
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+    display: flex !important;
+    align-items: center !important; /* Garante que o texto interno também alinhe */
+    height: 100% !important;
+    transition: 0.3s !important;
 }
 
+/* Garante que o botão acompanhe o mesmo alinhamento */
 .btn-header {
-    background: #c6a67d;
-    color: white !important;
-    /* AJUSTADO: Padding levemente maior para o botão não parecer pequeno */
-    padding: 12px 25px;
-    border-radius: 5px;
-    /* ALTERADO: Fonte do botão maior também */
-    font-size: 1.1rem;
+    background-color: #c6a67d !important;
+    color: #fff !important;
+    padding: 10px 22px !important;
+    border-radius: 5px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1 !important; /* Remove folgas de linha que empurram o texto */
 }
 
+.btn-header:hover {
+    background-color: #b08d57;
+    transform: translateY(-2px);
+}
+
+/* Esconder mobile no desktop */
+.logo-icon-mobile, .menu-toggle {
+    display: none;
+}
+
+/* Ajuste do topo do site */
+body {
+    padding-top: 110px;
+}
 /* 4. SEÇÕES GERAIS */
 .section {
     padding: 80px 10%;
@@ -236,7 +290,7 @@ a.btn-hero-whatsapp:hover {
 
 
 /* Ajuste para telas menores */
-/* 9. RESPONSIVIDADE (MOBILE) - SUBSTITUIR DA LINHA 234 ATÉ O FIM */
+/* 9. RESPONSIVIDADE (MOBILE)*/
 @media (max-width: 768px) {
     /* --- AJUSTES DO CABEÇALHO --- */
     .topbar .logo .logo-text {
