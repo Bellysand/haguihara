@@ -92,12 +92,6 @@ h1, h2, h3 {
 }
 
 .nav-menu {
-    display: flex;
-    gap: 25px;
-}
-
-/* --- AJUSTE DE ALINHAMENTO DO MENU DESKTOP --- */
-.nav-menu {
     display: flex !important;
     align-items: center !important; /* Alinha verticalmente ao centro todos os itens */
     gap: 30px !important;
@@ -126,12 +120,6 @@ h1, h2, h3 {
     justify-content: center !important;
     line-height: 1 !important; /* Remove folgas de linha que empurram o texto */
 }
-
-.btn-header:hover {
-    background-color: #b08d57;
-    transform: translateY(-2px);
-}
-
 /* Esconder mobile no desktop */
 .logo-icon-mobile, .menu-toggle {
     display: none;
@@ -289,104 +277,76 @@ a.btn-hero-whatsapp:hover {
 }
 
 
-/* Ajuste para telas menores */
-/* 9. RESPONSIVIDADE (MOBILE)*/
+/* --- 9. RESPONSIVIDADE (MOBILE) COMPLETA --- */
 @media (max-width: 768px) {
-    /* --- AJUSTES DO CABEÇALHO --- */
-    .topbar .logo .logo-text {
-        display: none; 
-    }
-
-    .topbar .logo .logo-icon-mobile {
-        display: block; 
-        font-family: 'Playfair Display', serif;
-        font-size: 2.2rem;
-        color: #8b4513;
-        font-weight: bold;
-    }
-
-    .menu-toggle {
-        display: flex; 
-    }
-
-    .nav-menu {
-        position: fixed;
-        top: 0;
-        right: -100%; 
-        width: 80%;
-        height: 100vh;
-        background-color: #fff;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 30px;
-        transition: 0.5s;
-        box-shadow: -10px 0 20px rgba(0,0,0,0.1);
-    }
-
-    .nav-menu.active {
-        right: 0; 
-    }
-
     
+    /* CABEÇALHO MOBILE */
+    .topbar {
+        padding: 8px 0 !important;
+        background-image: url('IMG/Background.Geral\ \(1\).png') !important;
+        background-size: cover;
+        min-height: 70px !important;
+        display: flex;
+        align-items: center;
+    }
+
+    .header-flex {
+        justify-content: center !important; /* Centraliza a flor no meio */
+        position: relative !important;
+        width: 100% !important;
+    }
+
+    /* Esconde a logo de texto/completa do desktop */
+    .logo-desktop-container {
+        display: none !important;
+    }
+
+    /* Mostra e centraliza o Ícone (Flor de Lótus) */
+    .logo-icon-mobile {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo-icon-mobile img {
+        height: 55px !important; /* Tamanho ajustado para destaque */
+        width: auto;
+    }
+
+    /* Menu Hambúrguer alinhado à direita */
+    .menu-toggle {
+        display: flex !important;
+        position: absolute !important;
+        right: 20px !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        z-index: 1001;
+    }
+
+    /* Ajuste da Seção Hero para não ficar por baixo do cabeçalho */
     .hero-section {
+        padding-top: 100px !important;
         display: flex !important;
         flex-direction: column !important;
-        justify-content: flex-start !important;
         align-items: center !important;
-        padding-top: 150px !important; /* Mantém o título onde você gostou */
-        padding-bottom: 50px !important;
-        min-height: 100vh !important;
-        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.6)), 
-                    url(IMG/abstract\ background\ Mobile.png) !important; 
-        background-size: cover !important;
-        background-position: center !important;
         text-align: center !important;
     }
+
+    /* Centralização dos textos da Hero no Mobile */
     .hero-text {
         position: static !important;
         left: 0 !important;
         margin: 0 auto !important;
-        padding: 0 20px !important;
-        width: 100% !important;
-        margin-top: -10px !important; /* Puxa o texto um pouquinho mais para cima se precisar */
+        text-align: center !important;
     }
 
     .hero-text h1 {
         font-size: 2rem !important;
-        line-height: 1.1 !important;
-        margin-top: 0 !important; /* Remove qualquer margem que empurre o título para baixo */
-        margin-bottom: 50px !important;
-        text-align: center !important;
-        text-shadow: 0px 0px 15px rgba(255, 255, 255, 1) !important;
+        margin-bottom: 20px !important;
     }
 
-    .hero-text p {
-        color: #8d7367;
-        font-size: 1.1rem !important;
-        padding: 0 !important;
-        margin: 0 auto 25px auto !important;
-        text-align: center !important;
-        text-shadow: 0px 0px 10px rgba(255, 255, 255, 1) !important;
-    }
-
-    /* --- AJUSTE FINAL: CENTRALIZAÇÃO DO BOTÃO NO MOBILE --- */
     .btn-hero-whatsapp {
-        margin: 25px auto 0 !important; /* Centraliza horizontalmente com o 'auto' */
-        display: flex !important;       /* Garante que o botão se comporte como bloco flexível */
-        width: fit-content !important;  /* Faz o botão ter apenas a largura do texto */
-        align-items: center !important;
-        justify-content: center !important;
+        margin: 20px auto 0 !important;
+        display: inline-flex !important;
     }
-   
-    .topbar .logo .logo-icon-mobile {
-    display: block !important;
-}
-
-    .topbar .logo .logo-icon-mobile img {
-    height: 45px !important; /* Ajuste o tamanho aqui se achar pequeno */
-    width: auto;
-    display: block;
-    margin-top: 5px; /* Alinha verticalmente com o botão de menu */
-}
 }
