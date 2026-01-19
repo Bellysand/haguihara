@@ -59,10 +59,11 @@ h1, h2, h3 {
 }
 
 .logo-desktop-container {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    gap: 15px;
+    display: flex !important;
+    flex-direction: row !important; /* Imagem e textos lado a lado */
+    align-items: center !important;
+    text-decoration: none !important;
+    gap: 15px !important;
 }
 
 .img-logo-header {
@@ -71,8 +72,15 @@ h1, h2, h3 {
 }
 
 .logo-text-group {
-    display: flex;
-    flex-direction: column;
+    display: flex !important;
+    flex-direction: column !important; /* Atelier em cima, Método embaixo */
+    justify-content: center !important;
+    text-align: left !important;
+}
+.logo-link {
+    display: flex !important;
+    align-items: center !important;
+    text-decoration: none !important;
 }
 
 .text-atelier {
