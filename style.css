@@ -16,11 +16,14 @@
 body {
     margin: 0;
     font-family: var(--fonte-secundaria);
-    background-color: var(--cor-fundo);
+    /* Substituímos a cor sólida pela sua nova imagem */
+    background: url('IMG/Background.Geral\ \(1\).png') no-repeat center center fixed; 
+    background-size: cover; 
     color: var(--cor-texto);
-    padding-top: 50px; /* compensa a topbar fixa */
+    padding-top: 50px; 
     scroll-behavior: smooth;
 }
+
 
 /* 2. TIPOGRAFIA */
 h1, h2, h3 {
@@ -87,11 +90,12 @@ h1, h2, h3 {
 /* 4. SEÇÕES GERAIS */
 .section {
     padding: 80px 10%;
-    background-color: var(--cor-clara);
+    /* Deixamos o fundo levemente transparente para o background aparecer */
+    background-color: rgba(255, 255, 255, 0.85); 
     margin: 20px auto;
     max-width: 1200px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 /* Controla o link que envolve a imagem */
 .whatsapp-float {
@@ -119,7 +123,7 @@ h1, h2, h3 {
 }
 /* 5. HERO SECTION */
 .hero-section {
-    background-image: url('IMG/background.png'); 
+    background-image: url('IMG/abstract\ background\ .png'); 
     background-size: cover;
     background-position: center right; /* Ajusta para a esteticista aparecer bem à direita */
     background-repeat: no-repeat;
@@ -148,7 +152,7 @@ h1, h2, h3 {
     max-width: 950px; 
     margin-left: 0;
     position: relative;
-    left: -80px; 
+    left: 25px; 
     z-index: 2;
     text-align: left;
     /* Efeito de sombra para dar leitura sem mudar a cor luxo */
@@ -280,7 +284,7 @@ a.btn-hero-whatsapp:hover {
         padding-bottom: 50px !important;
         min-height: 100vh !important;
         background: linear-gradient(to bottom, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.6)), 
-                    url('IMG/background.png') !important; 
+                    url(IMG/abstract\ background\ Mobile.png) !important; 
         background-size: cover !important;
         background-position: center !important;
         text-align: center !important;
