@@ -347,38 +347,46 @@ a.btn-hero-whatsapp:hover {
     }
 
     /* --- MENU HAMBÚRGUER --- */
-    .menu-toggle {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 5px !important;
-    }
+.menu-toggle {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 5px !important;
+    background: transparent !important; /* Remove o quadrado branco */
+    border: none !important; /* Remove qualquer borda */
+    cursor: pointer !important;
+    padding: 10px !important; /* Área de toque confortável */
+    outline: none !important; /* Remove o contorno ao clicar */
+}
 
-    .menu-toggle .bar {
-        width: 28px;
-        height: 3px;
-        background-color: #8b4513 !important;
-        border-radius: 2px;
-    }
+.menu-toggle .bar {
+    width: 28px !important;
+    height: 3px !important;
+    background-color: #8b4513 !important; /* Cor marrom luxo das barras */
+    border-radius: 2px !important;
+}
 
     /* Menu Lateral */
     .nav-menu {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 80%;
-        height: 100vh;
-        background-color: rgba(255, 255, 255, 0.98);
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 30px;
-        transition: 0.5s;
-        z-index: 2000;
-    }
+    position: fixed !important;
+    top: 0 !important;
+    right: -100% !important; /* Escondido à direita */
+    width: 80% !important;
+    height: 100vh !important;
+    background-color: rgba(255, 255, 255, 0.98) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 30px !important;
+    transition: 0.4s ease-in-out !important;
+    z-index: 2000 !important;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1) !important;
+}
 
-    .nav-menu.active {
-        right: 0 !important;
-    }
+/* Classe que o JavaScript vai ativar */
+.nav-menu.active {
+    right: 0 !important;
+}
 
     /* --- SUA SEÇÃO HERO (MANTIDA INTEGRALMENTE) --- */
     .hero-section {
