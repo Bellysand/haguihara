@@ -1,3 +1,8 @@
+/* ============================================================
+   ESTILO PROFISSIONAL - ATELIER DA BELEZA
+   Foco: Cabeçalho & Hero (Versão Final Consolidada)
+============================================================ */
+
 /* 1. VARIÁVEIS E CONFIGURAÇÃO GERAL */
 :root {
     --cor-fundo: #fdf2f0; /* Rosado pele suave */
@@ -16,14 +21,12 @@
 body {
     margin: 0;
     font-family: var(--fonte-secundaria);
-    /* Substituímos a cor sólida pela sua nova imagem */
     background: url('IMG/Background.Geral\ \(1\).png') no-repeat center center fixed; 
     background-size: cover; 
     color: var(--cor-texto);
-    padding-top: 50px; 
+    padding-top: 110px; 
     scroll-behavior: smooth;
 }
-
 
 /* 2. TIPOGRAFIA */
 h1, h2, h3 {
@@ -32,19 +35,16 @@ h1, h2, h3 {
     margin-top: 0;
 }
 
-/* --- 3. CABEÇALHO (TOPBAR) - VERSÃO LIMPA COM IMAGEM --- */
+/* 3. CABEÇALHO (TOPBAR) */
 .topbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    
-    /* Usando a sua imagem de fundo no cabeçalho para garantir a cor verde */
     background-image: url('IMG/Background.Geral\ \(1\).png');
     background-size: cover;
     background-position: top center;
-    
     padding: 10px 0;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
@@ -58,25 +58,27 @@ h1, h2, h3 {
     padding: 0 20px;
 }
 
+/* Estrutura da Logo */
 .logo-desktop-container {
     display: flex !important;
-    flex-direction: row !important; /* Imagem e textos lado a lado */
+    flex-direction: row !important; 
     align-items: center !important;
     text-decoration: none !important;
     gap: 15px !important;
 }
 
 .img-logo-header {
-    height: 90px; /* Logo aumentada como solicitado */
+    height: 90px; 
     width: auto;
 }
 
 .logo-text-group {
     display: flex !important;
-    flex-direction: column !important; /* Atelier em cima, Método embaixo */
+    flex-direction: column !important; 
     justify-content: center !important;
     text-align: left !important;
 }
+
 .logo-link {
     display: flex !important;
     align-items: center !important;
@@ -99,9 +101,10 @@ h1, h2, h3 {
     letter-spacing: 2px;
 }
 
+/* Menu de Navegação Desktop */
 .nav-menu {
     display: flex !important;
-    align-items: center !important; /* Alinha verticalmente ao centro todos os itens */
+    align-items: center !important; 
     gap: 30px !important;
     height: 100% !important;
 }
@@ -112,12 +115,11 @@ h1, h2, h3 {
     font-size: 1.1rem !important;
     font-weight: 600 !important;
     display: flex !important;
-    align-items: center !important; /* Garante que o texto interno também alinhe */
+    align-items: center !important; 
     height: 100% !important;
     transition: 0.3s !important;
 }
 
-/* Garante que o botão acompanhe o mesmo alinhamento */
 .btn-header {
     background-color: #c6a67d !important;
     color: #fff !important;
@@ -126,28 +128,24 @@ h1, h2, h3 {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    line-height: 1 !important; /* Remove folgas de linha que empurram o texto */
+    line-height: 1 !important; 
 }
-/* Esconder mobile no desktop */
+
+/* Esconder elementos mobile no desktop */
 .logo-icon-mobile, .menu-toggle {
     display: none;
 }
 
-/* Ajuste do topo do site */
-body {
-    padding-top: 110px;
-}
 /* 4. SEÇÕES GERAIS */
 .section {
     padding: 80px 10%;
-    /* Deixamos o fundo levemente transparente para o background aparecer */
     background-color: rgba(255, 255, 255, 0.85); 
     margin: 20px auto;
     max-width: 1200px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
-/* Controla o link que envolve a imagem */
+
 .whatsapp-float {
     position: fixed;
     width: 60px;
@@ -160,64 +158,50 @@ body {
     text-align: center;
     font-size: 30px;
     box-shadow: 2px 2px 3px #999;
-    z-index: 2000; /* Garante que fique acima de tudo */
+    z-index: 2000;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* Controla o tamanho da imagem em si */
 .img-whatsapp {
-    width: 35px; /* Define o tamanho real do ícone */
+    width: 35px; 
     height: 35px;
 }
+
 /* 5. HERO SECTION */
 .hero-section {
-    background-image: url('IMG/abstract\ background\ .png'); 
+    background-image: url('IMG/abstract\ background\ .png');
     background-size: cover;
-    background-position: center right; /* Ajusta para a esteticista aparecer bem à direita */
+    background-position: center right; 
     background-repeat: no-repeat;
-    min-height: 90vh; /* Ocupa quase a tela toda */
+    min-height: 90vh; 
     display: flex;
-    align-items: center; /* Centraliza o texto verticalmente */
+    align-items: center; 
     position: relative;
-    padding-top: 0;   /* Zeramos o padding do topo da seção */
+    padding-top: 0;   
     margin-top: 0;
 }
 
-/* Criamos um container para o texto não ocupar a tela toda */
 .hero-content {
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 5%;
-    max-width: 100% !important; 
+    max-width: 100% !important;
     padding-left: 5% !important;
     margin-left: 0 !important;
 }
 
-
 .hero-text {
     flex: 1;
-    max-width: 950px; 
+    max-width: 950px;
     margin-left: 0;
     position: relative;
-    left: 25px; 
+    left: 25px;
     z-index: 2;
     text-align: left;
-    /* Efeito de sombra para dar leitura sem mudar a cor luxo */
-    text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.9), 
+    text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.9),
                  -1px -1px 0px rgba(255, 255, 255, 0.4);
 }
 
-.hero-container {
-    display: flex;
-    justify-content: flex-start; /* Alinha o conteúdo no início (esquerda) */
-    align-items: center;
-    width: 100%;
-}
-
-/* Ajuste específico para o Título ganhar espaço */
 .hero-text h1 {
     margin-top: 0;
     font-family: 'Playfair Display', serif;
@@ -225,27 +209,25 @@ body {
     color: #8b4513;
     line-height: 1.1;
     margin-bottom: 20px;
-    /* Reforça a sombra no título principal */
     text-shadow: 3px 3px 10px rgba(255, 255, 255, 1);
 }
-.hero-text h1 span {
-   display: block;/*  Faz a segunda parte do título descer */
-    font-weight: 900;
-    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8), 
-                 -1px -1px 0px rgba(255, 255, 255, 0.5);
-    color: #8b4513; /* Mantém o marrom luxo */
-}
 
+.hero-text h1 span {
+   display: block;
+    font-weight: 900;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8),
+                 -1px -1px 0px rgba(255, 255, 255, 0.5);
+    color: #8b4513; 
+}
 
 .hero-text p {
     font-size: 1.3rem;
     color: #5d4037;
     margin-bottom: 35px;
     max-width: 600px;
-    font-weight: 500; /* Deixa o texto um pouco mais "grosso" para ler melhor */
+    font-weight: 500; 
 }
 
-/* FORÇANDO O ESTILO DO BOTÃO */
 .btn-hero-whatsapp {
     display: inline-flex !important;
     align-items: center !important;
@@ -263,7 +245,6 @@ body {
     box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
 }
 
-/* Trava o ícone para ele nunca mais explodir */
 .img-icon-fix {
     width: 25px !important;
     height: 25px !important;
@@ -271,23 +252,9 @@ body {
     display: block !important;
 }
 
-/* Garante que o link não fique azul ao ser clicado */
-a.btn-hero-whatsapp:visited, 
-a.btn-hero-whatsapp:active, 
-a.btn-hero-whatsapp:hover {
-    color: #ffffff !important;
-    text-decoration: none !important;
-}     
-.btn-hero-whatsapp:hover {
-    
-    transform: translateY(-3px);
-    filter: brightness(1.1);
-}
-
 /* 9. RESPONSIVIDADE (MOBILE) */
 @media (max-width: 768px) {
-    
-    /* --- AJUSTES DO CABEÇALHO --- */
+   
     .topbar {
         padding: 5px 0 !important;
         background-image: url('IMG/Background.Geral\ \(1\).png') !important;
@@ -299,28 +266,16 @@ a.btn-hero-whatsapp:hover {
 
     .header-flex {
         display: flex !important;
-        justify-content: space-between !important; 
+        justify-content: space-between !important;
         align-items: center !important;
         padding: 0 15px !important;
         width: 100% !important;
     }
 
-    /* Alinhamento da Logo + Texto */
     .logo {
         display: flex !important;
         align-items: center !important;
         gap: 12px !important;
-    }
-
-    .logo-link {
-        display: flex !important;
-        align-items: center !important;
-        gap: 12px !important;
-        text-decoration: none !important;
-    }
-
-    .logo-icon-mobile {
-        display: none !important;
     }
 
     .img-logo-header {
@@ -329,9 +284,8 @@ a.btn-hero-whatsapp:hover {
         display: block !important;
     }
 
-    /* Reforço dos textos ao lado da Logo */
     .logo-text-group {
-        display: flex !important; 
+        display: flex !important;
         flex-direction: column !important;
         justify-content: center !important;
         text-align: left !important;
@@ -353,7 +307,6 @@ a.btn-hero-whatsapp:hover {
         letter-spacing: 1px !important;
     }
 
-    /* --- BOTÃO HAMBÚRGUER --- */
     .menu-toggle {
         display: flex !important;
         flex-direction: column !important;
@@ -372,82 +325,71 @@ a.btn-hero-whatsapp:hover {
         border-radius: 2px !important;
     }
 
-/* --- PAINEL DO MENU (CENTRALIZAÇÃO TOTAL) --- */
+    /* --- PAINEL DO MENU (SLIM, CURTO E COM GRADIENTE) --- */
     .nav-menu {
         position: fixed !important;
-        top: 80px !important;       
+        top: 85px !important;           
         right: -100% !important; 
-        width: 65% !important;      
-        height: auto !important;     
-        background-color: rgba(255, 255, 255, 0.98) !important;
-        border-radius: 0 0 0 20px !important; 
-        
-        /* O segredo para centralizar tudo dentro */
+        width: 60% !important;          
+        height: auto !important;        
+        max-height: 80vh !important;    
+        background: linear-gradient(135deg, #e8f3e8 0%, #ffffff 100%) !important;
+        border-radius: 20px 0 20px 20px !important; 
         display: flex !important;
         flex-direction: column !important;
-        align-items: center !important;    /* Centraliza tudo horizontalmente */
-        justify-content: center !important; /* Centraliza tudo verticalmente no bloco */
-        
-        padding: 20px 0 !important;  
-        gap: 0px !important; /* Vamos controlar o espaço pelo padding dos links */
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 15px 0 !important;      
+        gap: 0px !important;
         transition: 0.4s ease-in-out !important;
         z-index: 2000 !important;
         box-shadow: -5px 5px 20px rgba(0,0,0,0.1) !important;
+        border: 1px solid rgba(255, 255, 255, 0.5) !important;
+        overflow-y: auto !important;
     }
 
     .nav-menu.active {
-        right: 0 !important;
+        right: 15px !important;         
     }
 
-    /* Links do Menu (Forçando o meio) */
     .nav-menu a {
-        display: flex !important;       /* Muda para flex para alinhar o texto */
-        align-items: center !important;
-        justify-content: center !important; /* Centraliza o texto horizontalmente */
-        
-        font-size: 1rem !important;
-        font-family: 'Montserrat', sans-serif !important;
-        color: #8b4513 !important;
-        text-decoration: none !important;
-        font-weight: 700 !important;
-        
-        width: 100% !important;         /* Ocupa a largura toda da caixa */
-        padding: 15px 0 !important;     /* Espaço vertical entre os nomes */
-        text-align: center !important;
-        border-bottom: 1px solid rgba(139, 69, 19, 0.05) !important;
-        margin: 0 !important;           /* Remove qualquer margem que possa empurrar */
-    }
-
-    /* Botão Fale Conosco (No meio absoluto) */
-    .nav-menu .btn-header {
-        background-color: #c5a980 !important;
-        color: #fff !important;
-        
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
-        
+        width: 100% !important;
+        padding: 15px 0 !important; 
+        font-size: 0.95rem !important;
+        color: #5d4037 !important;
+        font-weight: 700 !important;
+        border-bottom: 1px solid rgba(139, 69, 19, 0.05) !important;
+    }
+
+    .nav-menu .btn-header {
+        background-color: #c5a980 !important;
+        color: #fff !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
         width: 80% !important;        
-        max-width: 160px !important; 
+        max-width: 160px !important;
         height: 42px !important;      
         border-radius: 6px !important;
-        
-        margin: 20px 0 10px 0 !important; /* Margem zero nas laterais força o centro pelo flex do pai */
+        margin: 20px 0 10px 0 !important;
         font-size: 0.9rem !important;
-        border-bottom: none !important;
         font-weight: bold !important;
     }
-    /* --- SEÇÃO HERO (MANTIDA) --- */
+
+    /* --- SEÇÃO HERO MOBILE --- */
     .hero-section {
         display: flex !important;
         flex-direction: column !important;
         justify-content: flex-start !important;
         align-items: center !important;
-        padding-top: 150px !important; 
+        padding-top: 150px !important;
         padding-bottom: 50px !important;
         min-height: 100vh !important;
-        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.6)), 
-                    url('IMG/abstract background Mobile.png') !important; 
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.6)),
+                    url('IMG/abstract background Mobile.png') !important;
         background-size: cover !important;
         background-position: center !important;
         text-align: center !important;
@@ -458,6 +400,7 @@ a.btn-hero-whatsapp:hover {
         margin: 0 auto !important;
         padding: 0 20px !important;
         width: 100% !important;
+        left: 0 !important; /* Reseta o deslocamento do desktop */
     }
 
     .hero-text h1 {
@@ -476,6 +419,5 @@ a.btn-hero-whatsapp:hover {
     .btn-hero-whatsapp {
         margin: 25px auto 0 !important;
         display: flex !important;
-        width: fit-content !important;
     }
-}
+} /* <--- FIM DO BLOCO MOBILE (IMPORTANTE) */
