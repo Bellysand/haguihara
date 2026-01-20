@@ -13,7 +13,32 @@
     --fonte-principal: 'Playfair Display', serif; /* Essencial para o luxo */
     --fonte-secundaria: 'Poppins', sans-serif;
 }
+/* --- ANIMAÇÕES DE ENTRADA --- */
+@keyframes entradaTexto {
+    from {
+        opacity: 0;
+        transform: translateX(-50px); /* Começa 50px para a esquerda */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);    /* Termina no lugar certo */
+    }
+}
 
+@keyframes entradaSuave {
+    from {
+        opacity: 0;
+        transform: translateY(30px); /* Vem de baixo para cima */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+    @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
 * {
     box-sizing: border-box;
 }
@@ -393,9 +418,10 @@ h1, h2, h3 {
         background-size: cover !important;
         background-position: center !important;
         text-align: center !important;
+        animation: fadeIn 2s ease-in;
     }
 
-    .hero-text {
+     .hero-text {
         position: static !important;
         margin: 0 auto !important;
         padding: 0 20px !important;
@@ -408,16 +434,21 @@ h1, h2, h3 {
         line-height: 1.1 !important;
         margin-bottom: 30px !important;
         text-shadow: 2px 2px 10px rgba(255, 255, 255, 1) !important;
+        animation: entradaTexto 1.2s ease-out forwards;
     }
 
     .hero-text p {
         color: #5d4037 !important;
         font-size: 1.1rem !important;
         margin: 0 auto 25px auto !important;
+        opacity: 0; /* Começa invisível */
+        animation: entradaSuave 1s ease-out 0.5s forwards;
     }
 
     .btn-hero-whatsapp {
         margin: 25px auto 0 !important;
         display: flex !important;
+        opacity: 0;
+        animation: entradaSuave 1s ease-out 0.8s forwards;
     }
 } /* <--- FIM DO BLOCO MOBILE (IMPORTANTE) */
