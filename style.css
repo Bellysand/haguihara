@@ -431,116 +431,116 @@ h1, h2, h3 {
     line-height: 1.5;
     margin: 0 !important;
 }
-/* --- SEÇÃO 3: GALERIA DE VÍDEOS --- */
+/* --- SEÇÃO 3: GALERIA DE VÍDEOS (VERSÃO CARROSSEL) --- */
 .section-video {
     padding: 80px 5%;
     background: transparent !important;
 }
 
-.video-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 40px;
+/* Container Principal do Carrossel */
+.swiper-videos {
+    width: 100%;
     max-width: 1100px;
     margin: 0 auto;
-}
-
-.video-card {
-    background: rgba(253, 242, 240, 0.2);
-    backdrop-filter: blur(10px);
-    border-radius: 25px;
-    padding: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    text-align: center;
-    transition: 0.4s ease;
-}
-
-.video-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-}
-
-.video-card p {
-    margin-top: 20px;
-    color: #3e2723;
-    font-weight: 600;
-    font-family: var(--fonte-principal);
-    font-size: 1.2rem;
-}
-
-/* Ajuste para o vídeo do Instagram não quebrar o layout */
-.video-wrapper {
-    width: 100%;
-    border-radius: 15px;
-    overflow: hidden;
-    min-height: 450px;
-}
-
-/* Estilo para o vídeo que ainda vai chegar */
-.placeholder-video {
-    background: rgba(0, 0, 0, 0.05);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px dashed rgba(139, 69, 19, 0.2);
-}
-
-.loading-overlay span {
-    color: #8b4513;
-    font-style: italic;
-    font-size: 0.9rem;
-}
-.swiper-videos {
-    padding: 20px 0 50px !important;
-    max-width: 900px;
-}
-
-.video-card-insta {
-    background: #fff;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-.insta-header {
-    display: flex;
-    align-items: center;
-    padding: 12px 15px;
-    background: #fff;
-}
-
-.insta-header img {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-.insta-user strong { font-size: 0.9rem; display: block; color: #262626; }
-.insta-user span { font-size: 0.8rem; color: #b08d57; font-weight: bold; }
-
-.video-thumb {
-    height: 400px;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 20px 0 60px !important; /* Espaço para as setas/pontinhos */
+    overflow: hidden; /* Essencial para o Swiper */
     position: relative;
 }
 
-.play-btn {
-    text-decoration: none;
-    color: white;
-    font-size: 50px;
-    background: rgba(0,0,0,0.3);
-    width: 80px;
-    height: 80px;
+/* O "trilho" onde os vídeos deslizam */
+.swiper-wrapper {
+    display: flex !important;
+}
+
+/* Card Individual (Slide) */
+.video-card-insta {
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border: 1px solid rgba(176, 141, 87, 0.1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Cabeçalho estilo Instagram */
+.insta-header {
     display: flex;
     align-items: center;
-    justify-content: center;
+    padding: 15px;
+    background: #fff;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.insta-header img {
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    backdrop-filter: blur(5px);
+    margin-right: 12px;
+    object-fit: cover;
+    background: #eee; /* Cor de fundo caso a imagem falhe */
+}
+
+.insta-user strong { 
+    font-size: 0.95rem; 
+    display: block; 
+    color: #262626; 
+}
+
+.insta-user a { 
+    font-size: 0.85rem; 
+    color: #b08d57; 
+    text-decoration: none;
+    font-weight: bold; 
+}
+
+/* Área do Vídeo/Embed */
+.video-wrapper-embed {
+    width: 100%;
+    min-height: 500px; /* Evita que o site pule ao carregar */
+    background: #fafafa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ajuste para o Embed oficial não vazar do card */
+.video-wrapper-embed blockquote {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    border: none !important;
+}
+
+/* Legenda inferior */
+.video-caption {
+    padding: 15px;
+    background: #fff;
+    text-align: center;
+    border-top: 1px solid #f0f0f0;
+}
+
+.video-caption p {
+    color: #c9c8cd !important;
+    font-size: 14px !important;
+    margin: 0 !important;
+    font-style: italic;
+}
+
+/* Setas de navegação do Swiper */
+.swiper-button-next, .swiper-button-prev {
+    color: #b08d57 !important;
+    background: rgba(255, 255, 255, 0.8);
+    width: 45px !important;
+    height: 45px !important;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.swiper-button-next::after, .swiper-button-prev::after {
+    font-size: 18px !important;
+    font-weight: bold;
 }
 
 /* 9. RESPONSIVIDADE (MOBILE) */

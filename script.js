@@ -5,11 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (menuToggle && navMenu) {
         menuToggle.addEventListener('click', (e) => {
-            e.stopPropagation(); // Impede que o clique se espalhe
+            e.stopPropagation();
             navMenu.classList.toggle('active');
         });
 
-        // Fecha o menu ao clicar em qualquer link interno
         const menuLinks = navMenu.querySelectorAll('a');
         menuLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -17,16 +16,49 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Fecha o menu se clicar em qualquer lugar fora dele
         document.addEventListener('click', (e) => {
             if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
                 navMenu.classList.remove('active');
             }
         });
     }
+
+    // --- Inicialização do Carrossel (Swiper) ---
+    // Unifiquei os dois que você tinha em um só, dentro do DOMContentLoaded
+    const swiper = new Swiper('.swiper-videos', {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+        centeredSlides: true,
+        observer: true, 
+        observeParents: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+            768: { 
+                slidesPerView: 2,
+                centeredSlides: false
+            }
+        }
+    });
+
+    // --- Intersection Observer para os Cards da Seção 2 ---
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animar');
+            }
+        });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.beneficio-card').forEach((card) => {
+        observer.observe(card);
+    });
 });
 
-// --- Animação de entrada (Scroll Reveal) ---
+// --- Animação de entrada (Scroll Reveal Geral) ---
 const sections = document.querySelectorAll('.section');
 function revealOnScroll() {
     const trigger = window.innerHeight * 0.85;
@@ -40,7 +72,7 @@ function revealOnScroll() {
 window.addEventListener('scroll', revealOnScroll);
 revealOnScroll();
 
-// --- Formulário WhatsApp (O seu original) ---
+// --- Formulário WhatsApp ---
 const leadForm = document.getElementById('leadForm');
 if (leadForm) {
     leadForm.addEventListener('submit', function(e) {
@@ -53,25 +85,3 @@ if (leadForm) {
         window.open(`https://api.whatsapp.com/send?phone=${seuNumero}&text=${mensagem}`, '_blank');
     });
 }
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('animar');
-        }
-    });
-}, { threshold: 0.2 });
-
-document.querySelectorAll('.beneficio-card').forEach((card) => {
-    observer.observe(card);
-});
-const swiper = new Swiper('.swiper-videos', {
-  slidesPerView: 1, // Um vídeo por vez no mobile
-  spaceBetween: 30,
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-  breakpoints: {
-    768: { slidesPerView: 2 } // Dois vídeos lado a lado no PC
-  }
-});
