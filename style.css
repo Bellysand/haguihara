@@ -353,15 +353,14 @@ h1, h2, h3 {
     margin: 0 auto;
 }
 
-/* Card Estilo "Vidro" com Formato Quadrado */
-/* Card original: Ele começa invisível (opacity 0) e preparado para subir */
+
 .beneficio-card {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     text-align: center !important;
     
-    min-height: 350px !important; 
+    min-height: 280px !important; 
     justify-content: center !important;
     
     background: rgba(253, 242, 240, 0.2) !important; 
@@ -369,7 +368,7 @@ h1, h2, h3 {
     -webkit-backdrop-filter: blur(15px) !important;
     
     padding: 40px 30px !important;
-    border-radius: 25px;
+    border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.3) !important;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 
@@ -391,20 +390,27 @@ h1, h2, h3 {
 .beneficio-card:nth-child(2).animar { animation-delay: 0.3s !important; }
 .beneficio-card:nth-child(3).animar { animation-delay: 0.5s !important; }
 
-/* Efeito de Hover (continua igual) */
+/* Efeito Hover Unificado e Intensificado */
 .beneficio-card:hover {
-    transform: translateY(-15px) scale(1.03) !important; 
-    background: rgba(253, 242, 240, 0.35) !important;
-    border: 1px solid rgba(139, 69, 19, 0.3) !important;
-}
-/* Efeito Hover Refinado */
-.beneficio-card:hover {
-    transform: translateY(-15px) scale(1.03) !important; 
-    background: rgba(253, 242, 240, 0.35) !important;
-    border: 1px solid rgba(139, 69, 19, 0.3) !important;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    /* Faz o card saltar mais (20px) e crescer um pouco mais (5%) */
+    transform: translateY(-20px) scale(1.05) !important; 
+    
+    /* Fundo de vidro mais nítido e claro */
+    background: rgba(253, 242, 240, 0.5) !important; 
+    
+    /* Borda dourada mais aparente no toque */
+    border: 1px solid rgba(139, 69, 19, 0.5) !important;
+    
+    /* Sombra profunda para efeito de flutuação real */
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2) !important;
 }
 
+/* Toque extra: Animação do ícone junto com o card */
+.beneficio-card:hover .icon-area img {
+    transform: scale(1.1);
+    filter: drop-shadow(0px 0px 10px rgba(212, 163, 115, 0.8));
+    transition: 0.3s ease;
+}
 .icon-area img {
     width: 60px !important;
     height: auto !important;
