@@ -55,6 +55,17 @@
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
+/* --- ANIMAÇÃO DE SURGIMENTO DOS CARDS --- */
+@keyframes revelarCard {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) translateY(30px); /* Começa menor e um pouco abaixo */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);    /* Termina no tamanho real */
+    }
+}
 * {
     box-sizing: border-box;
 }
@@ -278,14 +289,14 @@ h1, h2, h3 {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 10px !important;
+    gap: 12px !important;
     background: linear-gradient(to right, #b08d57, #d4a373) !important;
     color: white !important;
-    padding: 12px 25px !important;
+    padding: 16px 40px !important;
     border-radius: 50px !important;
     text-decoration: none !important;
     font-weight: bold !important;
-    font-size: 1.1rem !important;
+    font-size: 1.25rem !important;
     width: fit-content !important;
     margin-top: 20px !important;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
@@ -295,12 +306,141 @@ h1, h2, h3 {
 }
 
 .img-icon-fix {
-    width: 25px !important;
-    height: 25px !important;
+    width: 28px !important;
+    height: 28px !important;
     object-fit: contain !important;
     display: block !important;
 }
+/* --- SEÇÃO 2: MÉTODO HAGUIHARA (GRID HORIZONTAL LUXO) --- */
+.section-metodo {
+    padding: 80px 5%;
+    background: transparent !important;
+}
 
+/* Título Centralizado com Leitura Forte */
+.section-metodo h2 {
+    color: #3e2723 !important; 
+    font-size: 2.8rem !important;
+    text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.7) !important;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.subtitle-premium {
+    color: #8b4513 !important;
+    font-weight: 700 !important;
+    display: block;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+/* Container dos 3 cards lado a lado */
+.beneficios-grid {
+    display: grid !important;
+    /* Divide em 3 colunas iguais no Desktop */
+    grid-template-columns: repeat(3, 1fr) !important; 
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Card Estilo "Vidro" Quadrado/Retangular */
+/* Card Estilo "Vidro" com Animação de Entrada */
+.beneficio-card {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    
+    background: rgba(253, 242, 240, 0.25) !important;
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    
+    padding: 40px 25px !important;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+
+    /* Configuração da Animação */
+    opacity: 0; /* Começa invisível */
+    animation: revelarCard 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards !important;
+    transition: transform 0.4s ease, background 0.4s ease !important;
+}
+
+/* Delays para o efeito cascata */
+.beneficio-card:nth-child(1) { animation-delay: 0.2s !important; }
+.beneficio-card:nth-child(2) { animation-delay: 0.4s !important; }
+.beneficio-card:nth-child(3) { animation-delay: 0.6s !important; }
+
+/* Mantém o hover que a gente já tinha, mas agora combinando com a animação */
+.beneficio-card:hover {
+    transform: translateY(-12px) scale(1.02) !important; 
+    background: rgba(253, 242, 240, 0.4) !important;
+    border: 1px solid rgba(139, 69, 19, 0.2) !important;
+}
+
+/* Ícone centralizado no topo do card */
+.icon-area {
+    margin-bottom: 20px;
+    flex-shrink: 0;
+}
+
+.icon-area img {
+    width: 55px !important;
+    height: auto !important;
+    filter: drop-shadow(0px 0px 5px rgba(139, 69, 19, 0.2));
+}
+
+/* Textos em Marrom Profundo */
+.beneficio-card h3 {
+    color: #3e2723 !important;
+    font-family: var(--fonte-principal);
+    font-size: 1.6rem !important;
+    margin-bottom: 15px !important;
+}
+
+.beneficio-card p {
+    color: #4e342e !important;
+    font-size: 1rem !important;
+    line-height: 1.5;
+    margin: 0 !important;
+    font-weight: 400 !important;
+}
+
+/* AJUSTE PARA TABLET E CELULAR */
+@media (max-width: 1024px) {
+    /* No tablet vira 2 colunas para não apertar */
+    .beneficios-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    /* No celular volta a ser um embaixo do outro */
+    .beneficios-grid {
+        grid-template-columns: 1fr !important;
+    }
+    .section-metodo h2 {
+        font-size: 2.2rem !important;
+    }
+}
+
+/* Ajuste Mobile: Volta a empilhar verticalmente para caber na tela */
+@media (max-width: 768px) {
+    .beneficio-card {
+        flex-direction: column !important;
+        text-align: center !important;
+        padding: 25px !important;
+    }
+    .icon-area {
+        margin-right: 0 !important;
+        margin-bottom: 15px !important;
+    }
+    .section-metodo h2 {
+        font-size: 2rem !important;
+    }
+}
 /* 9. RESPONSIVIDADE (MOBILE) */
 @media (max-width: 768px) {
    
