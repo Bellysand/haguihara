@@ -1,5 +1,7 @@
-// --- Menu Hambúrguer (Funcionalidade de Abrir/Fechar) ---
+// --- Inicialização Geral ---
 document.addEventListener('DOMContentLoaded', () => {
+    
+    // 1. Menu Hambúrguer (Funcionalidade de Abrir/Fechar)
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
 
@@ -9,11 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
             navMenu.classList.toggle('active');
         });
 
-        const menuLinks = navMenu.querySelectorAll('a');
-        menuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-            });
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => navMenu.classList.remove('active'));
         });
 
         document.addEventListener('click', (e) => {
@@ -23,44 +22,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Inicialização do Carrossel (Swiper) ---
-    // Unifiquei os dois que você tinha em um só, dentro do DOMContentLoaded
-    const swiper = new Swiper('.swiper-videos', {
-        slidesPerView: 1,
-        spaceBetween: 20,
-        loop: true,
-        centeredSlides: true,
-        observer: true, 
-        observeParents: true,
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        breakpoints: {
-            768: { 
-                slidesPerView: 2,
-                centeredSlides: false
-            }
-        }
-    });
-
-    // --- Intersection Observer para os Cards da Seção 2 ---
-    const observer = new IntersectionObserver((entries) => {
+    // 2. Intersection Observer (Animação dos Cards Seção 2)
+    const observerOptions = { threshold: 0.2 };
+    const cardObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('animar');
             }
         });
-    }, { threshold: 0.2 });
+    }, observerOptions);
 
     document.querySelectorAll('.beneficio-card').forEach((card) => {
-        observer.observe(card);
+        cardObserver.observe(card);
     });
 });
 
-// --- Animação de entrada (Scroll Reveal Geral) ---
-const sections = document.querySelectorAll('.section');
+// --- Animação de entrada Geral (Scroll Reveal) ---
 function revealOnScroll() {
+    const sections = document.querySelectorAll('.section');
     const trigger = window.innerHeight * 0.85;
     sections.forEach(sec => {
         const top = sec.getBoundingClientRect().top;
