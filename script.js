@@ -64,3 +64,14 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.beneficio-card').forEach((card) => {
     observer.observe(card);
 });
+const swiper = new Swiper('.swiper-videos', {
+  slidesPerView: 1, // Um vídeo por vez no mobile
+  spaceBetween: 30,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+    768: { slidesPerView: 2 } // Dois vídeos lado a lado no PC
+  }
+});

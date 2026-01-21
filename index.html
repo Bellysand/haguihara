@@ -6,7 +6,8 @@
     <title>Atelier da Beleza | Método Haguihara</title>
     
     <link rel="stylesheet" href="style.css">
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;600&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
@@ -96,14 +97,53 @@
     </div>
 </section>
 
-    <section id="video" class="section bg-light">
-        <div class="container">
-            <h2 class="text-center">Veja na Prática</h2>
-            <div class="video-container">
-                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DO62mqDgT0b/" style="width: 100%; margin: auto;"></blockquote>
-            </div>
+    <section id="video" class="section-video">
+    <div class="container">
+        <div class="header-section text-center">
+            <span class="subtitle-premium">Experiência Atelier</span>
+            <h2>O Método em Movimento</h2>
+            <div class="divider-ouro"></div>
         </div>
-    </section>
+
+        <div class="swiper swiper-videos">
+            <div class="swiper-wrapper">
+                
+                <div class="swiper-slide">
+                    <div class="video-card-insta">
+                        <div class="insta-header">
+                            <img src="URL_DA_FOTO_PERFIL" alt="Perfil">
+                            <div class="insta-user">
+                                <strong>estetica.luizapaiva</strong>
+                                <span>Ver perfil</span>
+                            </div>
+                        </div>
+                        <div class="video-thumb" style="background-image: url('URL_DA_CAPA_VIDEO_1')">
+                            <a href="https://www.instagram.com/reel/DO62mqDgT0b/" target="_blank" class="play-btn">▶</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="video-card-insta">
+                        <div class="insta-header">
+                            <img src="URL_DA_FOTO_PERFIL" alt="Perfil">
+                            <div class="insta-user">
+                                <strong>estetica.luizapaiva</strong>
+                                <span>Ver perfil</span>
+                            </div>
+                        </div>
+                        <div class="video-thumb placeholder">
+                            <span>Aguardando link...</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+</section>
 
     <section id="resultados" class="section">
         <div class="container">

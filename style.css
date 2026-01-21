@@ -431,50 +431,118 @@ h1, h2, h3 {
     line-height: 1.5;
     margin: 0 !important;
 }
-
-/* Garante que no Mobile eles fiquem empilhados e legíveis */
-@media (max-width: 768px) {
-    .beneficios-grid {
-        grid-template-columns: 1fr !important;
-    }
-    .section-metodo {
-        padding: 100px 5% !important;
-    }
+/* --- SEÇÃO 3: GALERIA DE VÍDEOS --- */
+.section-video {
+    padding: 80px 5%;
+    background: transparent !important;
 }
 
-/* AJUSTE PARA TABLET E CELULAR */
-@media (max-width: 1024px) {
-    /* No tablet vira 2 colunas para não apertar */
-    .beneficios-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-    }
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
-@media (max-width: 768px) {
-    /* No celular volta a ser um embaixo do outro */
-    .beneficios-grid {
-        grid-template-columns: 1fr !important;
-    }
-    .section-metodo h2 {
-        font-size: 2.2rem !important;
-    }
+.video-card {
+    background: rgba(253, 242, 240, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: center;
+    transition: 0.4s ease;
 }
 
-/* Ajuste Mobile: Volta a empilhar verticalmente para caber na tela */
-@media (max-width: 768px) {
-    .beneficio-card {
-        flex-direction: column !important;
-        text-align: center !important;
-        padding: 25px !important;
-    }
-    .icon-area {
-        margin-right: 0 !important;
-        margin-bottom: 15px !important;
-    }
-    .section-metodo h2 {
-        font-size: 2rem !important;
-    }
+.video-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
+
+.video-card p {
+    margin-top: 20px;
+    color: #3e2723;
+    font-weight: 600;
+    font-family: var(--fonte-principal);
+    font-size: 1.2rem;
+}
+
+/* Ajuste para o vídeo do Instagram não quebrar o layout */
+.video-wrapper {
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    min-height: 450px;
+}
+
+/* Estilo para o vídeo que ainda vai chegar */
+.placeholder-video {
+    background: rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed rgba(139, 69, 19, 0.2);
+}
+
+.loading-overlay span {
+    color: #8b4513;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+.swiper-videos {
+    padding: 20px 0 50px !important;
+    max-width: 900px;
+}
+
+.video-card-insta {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.insta-header {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    background: #fff;
+}
+
+.insta-header img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.insta-user strong { font-size: 0.9rem; display: block; color: #262626; }
+.insta-user span { font-size: 0.8rem; color: #b08d57; font-weight: bold; }
+
+.video-thumb {
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.play-btn {
+    text-decoration: none;
+    color: white;
+    font-size: 50px;
+    background: rgba(0,0,0,0.3);
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    backdrop-filter: blur(5px);
+}
+
 /* 9. RESPONSIVIDADE (MOBILE) */
 @media (max-width: 768px) {
    
@@ -655,5 +723,53 @@ h1, h2, h3 {
         opacity: 0;
         animation: entradaSuave 1.2s ease-out 0.8s forwards, 
                    pulsar 2s ease-in-out 2.5s infinite !important;
+    }
+}
+/* ============================================================
+   RESPONSIVIDADE (MOBILE & TABLET) - CONSOLIDADA
+============================================================ */
+
+/* 1. TABLET (Telas até 1024px) */
+@media (max-width: 1024px) {
+    .beneficios-grid {
+        grid-template-columns: repeat(2, 1fr) !important; /* Vira 2 colunas no tablet */
+    }
+}
+
+/* 2. CELULAR (Telas até 768px) - Centralize TUDO aqui */
+@media (max-width: 768px) {
+    
+    /* Configurações da Seção 1 (Hero) que você já tinha... */
+    /* Mantenha o que já estava lá do Hero aqui dentro também */
+
+    /* --- AJUSTES SEÇÃO 2 (MÉTODO) --- */
+    .section-metodo {
+        padding: 80px 5% !important; /* Reduz respiro no mobile */
+    }
+
+    .section-metodo h2 {
+        font-size: 2rem !important; /* Título menor para não quebrar linha feio */
+    }
+
+    .beneficios-grid {
+        grid-template-columns: 1fr !important; /* Vira 1 coluna (empilhado) */
+        gap: 20px !important;
+    }
+
+    .beneficio-card {
+        flex-direction: column !important; /* Força ícone em cima e texto embaixo */
+        text-align: center !important;
+        padding: 30px 20px !important;
+        min-height: auto !important; /* No mobile, o card cresce conforme o texto */
+    }
+
+    .icon-area {
+        margin-right: 0 !important;
+        margin-bottom: 15px !important;
+    }
+
+    /* --- AJUSTES SEÇÃO 3 (VÍDEOS) --- */
+    .video-grid {
+        grid-template-columns: 1fr !important; /* Vídeos um embaixo do outro no celular */
     }
 }
