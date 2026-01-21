@@ -53,3 +53,14 @@ if (leadForm) {
         window.open(`https://api.whatsapp.com/send?phone=${seuNumero}&text=${mensagem}`, '_blank');
     });
 }
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animar');
+        }
+    });
+}, { threshold: 0.2 });
+
+document.querySelectorAll('.beneficio-card').forEach((card) => {
+    observer.observe(card);
+});
