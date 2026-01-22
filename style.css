@@ -375,7 +375,7 @@ h1, h2, h3 {
     /* ESTADO INICIAL: Invisível e um pouco abaixo */
     opacity: 0; 
     transform: translateY(30px) scale(0.9);
-    transition: all 0.5s ease !important;
+    transition: all 1.5s ease-out !important;
 }
 
 /* ESTA É A NOVA CLASSE: Ela será adicionada pelo script.js automaticamente */
@@ -536,14 +536,15 @@ h1, h2, h3 {
     margin: 20px auto 0;
     border-radius: 2px;
 }
-/* Estado inicial (escondido e um pouco abaixo) */
+/* Estado inicial: invisível e deslocado */
 .animar-video {
     opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
+    transform: translateY(40px);
+    /* Aumentamos de 0.8s para 1.5s para ficar bem mais devagar */
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
 }
 
-/* Quando a animação dispara */
+/* Estado final: surge suavemente */
 .animar-video.visivel {
     opacity: 1;
     transform: translateY(0);
@@ -551,9 +552,10 @@ h1, h2, h3 {
 
 /* Efeito ao passar o mouse (Hover) */
 .video-card-insta:hover {
-    transform: scale(1.03); /* Aumenta levemente */
-    box-shadow: 0 20px 40px rgba(176, 141, 87, 0.2); /* Sombra na cor ouro */
-    transition: transform 0.3s ease;
+    /* O hover pode ser um pouco mais rápido para dar resposta ao clique */
+    transform: translateY(-5px) scale(1.02) !important;
+    transition: transform 0.4s ease !important; 
+    box-shadow: 0 20px 40px rgba(176, 141, 87, 0.2) !important;
 }
 
 /* 9. RESPONSIVIDADE (MOBILE) */
