@@ -557,38 +557,69 @@ h1, h2, h3 {
     transition: transform 0.4s ease !important; 
     box-shadow: 0 20px 40px rgba(176, 141, 87, 0.2) !important;
 }
-/* --- SEÇÃO 4: RESULTADOS  --- */
+/* --- SEÇÃO 4: RESULTADOS --- */
 .section-resultados {
     padding: 100px 5%;
-    /* Usa o mesmo fundo verde do site com um gradiente para fundir com a seção de cima */
-    background: linear-gradient(to bottom, transparent, rgba(232, 243, 232, 0.5)), 
-                url('IMG/Background.Geral (1).png') !important;
-    background-size: cover;
-    background-position: center;
+    background-image: url('IMG/Background.Geral (1).png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-attachment: fixed !important; 
+    background-repeat: no-repeat !important;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Título Padrão Seções 2 e 3 */
+.section-resultados .header-section {
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.section-resultados h2 {
+    color: #3e2723 !important;
+    font-size: 3.5rem !important;
+    font-weight: 900 !important;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.9), 0 0 10px rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Grid e Cards */
+.resultados-grid {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.resultado-card {
+    flex: 1;
+    max-width: 450px;
+    background: rgba(255, 255, 255, 0.92) !important;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    transition: all 1.5s ease-out !important;
+}
+
+.resultado-img-wrapper {
+    width: 100%;
+    height: 400px;
     position: relative;
 }
 
-/* Efeito de "vidro" nos cards para não brigar com o fundo */
-.resultado-card {
-    background: rgba(255, 255, 255, 0.8) !important;
-    backdrop-filter: blur(10px); /* Deixa o fundo do card levemente transparente chique */
-    border-radius: 25px;
-    overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
-    border: 1px solid rgba(255, 255, 255, 0.5) !important;
-    transition: all 1.5s ease-out !important; /* Suavização que você pediu */
+.resultado-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .resultado-info {
     padding: 25px;
-    background: white; /* Garante leitura limpa no texto */
-}
-
-/* Ajuste do Título para brilhar no fundo verde igual à Seção 2 e 3 */
-.section-resultados h2 {
-    color: #3e2723 !important;
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.9), 
-                 0 0 10px rgba(255, 255, 255, 0.6) !important;
+    text-align: center;
+    background: white;
 }
 /* ============================================================
    9. RESPONSIVIDADE (MOBILE & TABLET) - CONSOLIDADA
@@ -794,7 +825,7 @@ h1, h2, h3 {
     /* SEÇÃO 4 (RESULTADOS) */
     .resultados-grid { grid-template-columns: 1fr !important; }
     .resultado-img-wrapper { height: 350px !important; }
-    
+
     .section-resultados {
         background-image: url('IMG/abstract background Mobile.png') !important;
         padding: 60px 5% !important;
