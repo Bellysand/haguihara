@@ -823,11 +823,26 @@ h1, h2, h3 {
     .video-player { border-radius: 15px; }
 
     /* SEÇÃO 4 (RESULTADOS) */
-    .resultados-grid { grid-template-columns: 1fr !important; }
-    .resultado-img-wrapper { height: 350px !important; }
+    .resultados-grid { 
+        grid-template-columns: 1fr !important; }
+    .resultado-img-wrapper { 
+        height: 350px !important; }
 
     .section-resultados {
         background-image: url('IMG/abstract background Mobile.png') !important;
         padding: 60px 5% !important;
+    }
+    .section-resultados h2 {
+        font-size: 2.2rem !important;
+    }
+    .resultados-grid {
+        flex-direction: column !important;
+        align-items: center;
+    }
+    .resultado-card {
+        width: 100% !important;
+    }
+    .section-resultados {
+        background-attachment: scroll !important;
     }
 }
