@@ -536,7 +536,25 @@ h1, h2, h3 {
     margin: 20px auto 0;
     border-radius: 2px;
 }
+/* Estado inicial (escondido e um pouco abaixo) */
+.animar-video {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
 
+/* Quando a animação dispara */
+.animar-video.visivel {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Efeito ao passar o mouse (Hover) */
+.video-card-insta:hover {
+    transform: scale(1.03); /* Aumenta levemente */
+    box-shadow: 0 20px 40px rgba(176, 141, 87, 0.2); /* Sombra na cor ouro */
+    transition: transform 0.3s ease;
+}
 
 /* 9. RESPONSIVIDADE (MOBILE) */
 @media (max-width: 768px) {
@@ -734,9 +752,6 @@ h1, h2, h3 {
 /* 2. CELULAR (Telas até 768px) - Centralize TUDO aqui */
 @media (max-width: 768px) {
     
-    /* Configurações da Seção 1 (Hero) que você já tinha... */
-    /* Mantenha o que já estava lá do Hero aqui dentro também */
-
     /* --- AJUSTES SEÇÃO 2 (MÉTODO) --- */
     .section-metodo {
         padding: 80px 5% !important; /* Reduz respiro no mobile */

@@ -22,18 +22,31 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 2. Intersection Observer (Animação dos Cards Seção 2)
+    // 2. Intersection Observer (Animação dos Cards Seção 2 e Vídeos Seção 3)
     const observerOptions = { threshold: 0.2 };
+    
     const cardObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('animar');
+                // Adiciona a classe de animação dependendo do elemento
+                if (entry.target.classList.contains('beneficio-card')) {
+                    entry.target.classList.add('animar');
+                } 
+                if (entry.target.classList.contains('animar-video')) {
+                    entry.target.classList.add('visivel');
+                }
             }
         });
     }, observerOptions);
 
+    // Observa os cards da Seção 2
     document.querySelectorAll('.beneficio-card').forEach((card) => {
         cardObserver.observe(card);
+    });
+
+    // Observa os cards de vídeo da Seção 3
+    document.querySelectorAll('.animar-video').forEach((video) => {
+        cardObserver.observe(video);
     });
 });
 
