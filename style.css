@@ -635,14 +635,15 @@ h1, h2, h3 {
     background: #b08d57 !important;
 }
 
-/* --- SEÇÃO 5: PACOTES PROMOCIONAIS (PADRONIZADA) --- */
+/* --- SEÇÃO 5: PACOTES PROMOCIONAIS --- */
 .section-pacotes {
     padding: 100px 5%;
     position: relative;
     overflow: hidden;
+    width: 100%;
 }
 
-/* Padronização do Título com Glow */
+/* Título com efeito Glow (Padrão das seções anteriores) */
 .section-pacotes h2 {
     color: #3e2723 !important;
     font-size: 3.5rem !important;
@@ -650,15 +651,25 @@ h1, h2, h3 {
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.9), 
                  0 0 10px rgba(255, 255, 255, 0.6) !important;
     text-align: center;
+    margin-bottom: 10px;
 }
 
+.section-pacotes .divider-ouro {
+    width: 80px;
+    height: 3px;
+    background: #b08d57;
+    margin: 20px auto 50px;
+}
+
+/* Wrapper das Bolhas */
 .pacotes-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
     gap: 40px;
     flex-wrap: wrap;
-    margin-top: 50px;
+    width: 100%;
+    margin-bottom: 50px;
 }
 
 .pacote-circle {
@@ -679,7 +690,7 @@ h1, h2, h3 {
     transition: all 0.5s ease;
 }
 
-/* Efeito de flutuação */
+/* Efeito de flutuação independente */
 .pacote-item:nth-child(odd) .pacote-circle { animation: floating 4s ease-in-out infinite; }
 .pacote-item:nth-child(even) .pacote-circle { animation: floating 5s ease-in-out infinite reverse; }
 
@@ -689,9 +700,10 @@ h1, h2, h3 {
     100% { transform: translateY(0px); }
 }
 
+/* Card em Destaque */
 .pacote-item.destaque .pacote-circle {
-    width: 360px;
-    height: 360px;
+    width: 370px;
+    height: 370px;
     background: white;
     border-color: #b08d57;
     z-index: 2;
@@ -702,35 +714,46 @@ h1, h2, h3 {
     font-family: 'Montserrat', sans-serif;
     color: #b08d57;
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     margin-bottom: 10px;
 }
 
 .pacote-inner h3 {
     font-size: 1.6rem;
+    color: #3e2723;
     margin-bottom: 15px;
 }
 
 .badge-venda {
     position: absolute;
-    top: 20px;
+    top: 25px;
     background: #8b4513;
     color: white;
-    padding: 5px 15px;
+    padding: 6px 18px;
     border-radius: 20px;
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
+    font-weight: 700;
     letter-spacing: 1px;
 }
 
-/* Botão de Avaliação Pulsante */
+/* --- CONTAINER DO BOTÃO (CORREÇÃO DESKTOP) --- */
+.container-botao-anamnese {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin-top: 40px !important;
+    position: relative;
+    z-index: 10;
+}
+
 .btn-pacote {
-    margin: 40px auto 0 !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
+    min-width: 320px;
     text-decoration: none !important;
-    animation: pulsar 2s ease-in-out infinite !important; /* Reutiliza a animação do Hero */
+    animation: pulsar 2s ease-in-out infinite !important;
 }
 /* ============================================================
    9. RESPONSIVIDADE (MOBILE & TABLET) - CONSOLIDADA
@@ -933,7 +956,7 @@ h1, h2, h3 {
     .video-container-local { height: 400px !important; }
     .video-player { border-radius: 15px; }
 
-    /* --- AJUSTE FINAL CARROSSEL MOBILE (SEM DOIDEIRA) --- */
+    /* --- AJUSTE FINAL CARROSSEL MOBILE  --- */
 @media (max-width: 768px) {
     .section-resultados {
         padding: 60px 0 !important; /* Zeramos as laterais para o swiper usar tudo */
@@ -1001,4 +1024,23 @@ h1, h2, h3 {
     .price-tag {
         font-size: 1.2rem !important;
     }
+    /* --- CORREÇÃO DEFINITIVA DO BOTÃO NO DESKTOP --- */
+.container-botao-final {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin-top: 50px !important;
+    position: relative !important;
+    clear: both !important; /* Força o botão a descer para baixo de tudo */
+}
+
+.btn-pacote {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 320px !important; /* Tamanho fixo para não sumir no PC */
+    animation: pulsar 2s ease-in-out infinite !important;
+    text-decoration: none !important;
+    z-index: 99;
+}
 }
