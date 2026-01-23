@@ -77,30 +77,38 @@ function revealOnScroll() {
 window.addEventListener('scroll', revealOnScroll);
 revealOnScroll();
 
-// --- Formulário WhatsApp ---
-const leadForm = document.getElementById('leadForm');
-if (leadForm) {
-    leadForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const nome = this.querySelector('input[type="text"]').value;
-        const tel = this.querySelector('input[type="tel"]').value;
-        const objetivoSelect = document.getElementById('objetivo');
-        let objetivoTexto = objetivoSelect.options[objetivoSelect.selectedIndex].text;
-        
-        const seuNumero = "5524999543417"; 
-        
-        // Se for "Outros", adicionamos um lembrete para a esteticista investigar
-        if (objetivoSelect.value === "outros") {
-            objetivoTexto = "Outros (Conversar para entender a necessidade)";
-        }
-        
-        const mensagem = `*INTERESSE EM AVALIAÇÃO*%0A%0A` +
-                         `*Nome:* ${nome}%0A` +
-                         `*WhatsApp:* ${tel}%0A` +
-                         `*Foco do Tratamento:* ${objetivoTexto}%0A%0A` +
-                         `_Gostaria de verificar a disponibilidade de horários._`;
+// --- Formulário WhatsApp com Verificação de Carregamento ---
+document.addEventListener('DOMContentLoaded', function() {
+    const leadForm = document.getElementById('leadForm');
+    
+    if (leadForm) {
+        leadForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Coleta os valores dos campos
+            const nome = this.querySelector('input[type="text"]').value;
+            const tel = this.querySelector('input[type="tel"]').value;
+            const objetivoSelect = document.getElementById('objetivo');
+            
+            // Valida se o select existe antes de pegar o texto
+            let objetivoTexto = objetivoSelect ? objetivoSelect.options[objetivoSelect.selectedIndex].text : "Não informado";
+            
+            const seuNumero = "5524999543417"; 
+            
+            // Lógica para a opção "Outros"
+            if (objetivoSelect && objetivoSelect.value === "outros") {
+                objetivoTexto = "Outros (Conversar para entender a necessidade)";
+            }
+            
+            // Montagem da mensagem formatada para o WhatsApp
+            const mensagem = `*INTERESSE EM AVALIAÇÃO*%0A%0A` +
+                             `*Nome:* ${nome}%0A` +
+                             `*WhatsApp:* ${tel}%0A` +
+                             `*Foco do Tratamento:* ${objetivoTexto}%0A%0A` +
+                             `_Gostaria de verificar a disponibilidade de horários._`;
 
-        window.open(`https://api.whatsapp.com/send?phone=${seuNumero}&text=${mensagem}`, '_blank');
-    });
-}
+            // Abre o WhatsApp em uma nova aba
+            window.open(`https://api.whatsapp.com/send?phone=${seuNumero}&text=${mensagem}`, '_blank');
+        });
+    }
+});
