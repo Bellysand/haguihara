@@ -634,6 +634,99 @@ h1, h2, h3 {
 .swiper-pagination-bullet-active {
     background: #b08d57 !important;
 }
+/* --- SEÇÃO 5: PACOTES PROMOCIONAIS --- */
+.section-pacotes {
+    padding: 100px 5%;
+    position: relative;
+    overflow: hidden;
+}
+
+.pacotes-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.pacote-circle {
+    width: 320px;
+    height: 320px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border-radius: 50%; /* Faz o círculo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    border: 2px solid rgba(176, 141, 87, 0.3);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+/* Efeito de flutuação independente para cada bolha */
+.pacote-item:nth-child(odd) .pacote-circle {
+    animation: floating 4s ease-in-out infinite;
+}
+.pacote-item:nth-child(even) .pacote-circle {
+    animation: floating 5s ease-in-out infinite reverse;
+}
+
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+.pacote-item.destaque .pacote-circle {
+    width: 360px;
+    height: 360px;
+    background: white;
+    border-color: #b08d57;
+    z-index: 2;
+    box-shadow: 0 30px 60px rgba(139, 69, 19, 0.15);
+}
+
+.price-tag {
+    font-family: 'Montserrat', sans-serif;
+    color: #b08d57;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.pacote-inner h3 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+}
+
+.badge-venda {
+    position: absolute;
+    top: 20px;
+    background: #8b4513;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Mobile: Empilhar suavemente */
+@media (max-width: 768px) {
+    .pacote-circle {
+        width: 280px;
+        height: 280px;
+    }
+    .pacote-item.destaque .pacote-circle {
+        width: 300px;
+        height: 300px;
+    }
+}
 /* ============================================================
    9. RESPONSIVIDADE (MOBILE & TABLET) - CONSOLIDADA
 ============================================================ */
