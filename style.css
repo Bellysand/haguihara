@@ -634,11 +634,22 @@ h1, h2, h3 {
 .swiper-pagination-bullet-active {
     background: #b08d57 !important;
 }
-/* --- SEÇÃO 5: PACOTES PROMOCIONAIS --- */
+
+/* --- SEÇÃO 5: PACOTES PROMOCIONAIS (PADRONIZADA) --- */
 .section-pacotes {
     padding: 100px 5%;
     position: relative;
     overflow: hidden;
+}
+
+/* Padronização do Título com Glow */
+.section-pacotes h2 {
+    color: #3e2723 !important;
+    font-size: 3.5rem !important;
+    font-weight: 900 !important;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.9), 
+                 0 0 10px rgba(255, 255, 255, 0.6) !important;
+    text-align: center;
 }
 
 .pacotes-wrapper {
@@ -655,7 +666,7 @@ h1, h2, h3 {
     height: 320px;
     background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(10px);
-    border-radius: 50%; /* Faz o círculo */
+    border-radius: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -668,13 +679,9 @@ h1, h2, h3 {
     transition: all 0.5s ease;
 }
 
-/* Efeito de flutuação independente para cada bolha */
-.pacote-item:nth-child(odd) .pacote-circle {
-    animation: floating 4s ease-in-out infinite;
-}
-.pacote-item:nth-child(even) .pacote-circle {
-    animation: floating 5s ease-in-out infinite reverse;
-}
+/* Efeito de flutuação */
+.pacote-item:nth-child(odd) .pacote-circle { animation: floating 4s ease-in-out infinite; }
+.pacote-item:nth-child(even) .pacote-circle { animation: floating 5s ease-in-out infinite reverse; }
 
 @keyframes floating {
     0% { transform: translateY(0px); }
@@ -716,16 +723,14 @@ h1, h2, h3 {
     letter-spacing: 1px;
 }
 
-/* Mobile: Empilhar suavemente */
-@media (max-width: 768px) {
-    .pacote-circle {
-        width: 280px;
-        height: 280px;
-    }
-    .pacote-item.destaque .pacote-circle {
-        width: 300px;
-        height: 300px;
-    }
+/* Botão de Avaliação Pulsante */
+.btn-pacote {
+    margin: 40px auto 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-decoration: none !important;
+    animation: pulsar 2s ease-in-out infinite !important; /* Reutiliza a animação do Hero */
 }
 /* ============================================================
    9. RESPONSIVIDADE (MOBILE & TABLET) - CONSOLIDADA
@@ -967,4 +972,33 @@ h1, h2, h3 {
         height: 280px !important; /* Um pouco menor para caber na tela do cel */
     }
 }
+/* --- AJUSTES SEÇÃO 5 (PACOTES) MOBILE --- */
+    .section-pacotes h2 {
+        font-size: 2.2rem !important;
+        padding: 0 20px !important;
+    }
+
+    .pacotes-wrapper {
+        gap: 20px !important;
+        flex-direction: column !important;
+    }
+
+    .pacote-circle {
+        width: 280px !important;
+        height: 280px !important;
+        padding: 30px !important;
+    }
+
+    .pacote-item.destaque .pacote-circle {
+        width: 300px !important;
+        height: 300px !important;
+    }
+
+    .pacote-inner h3 {
+        font-size: 1.3rem !important;
+    }
+
+    .price-tag {
+        font-size: 1.2rem !important;
+    }
 }
