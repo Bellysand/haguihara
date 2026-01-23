@@ -621,6 +621,19 @@ h1, h2, h3 {
     text-align: center;
     background: white;
 }
+.swiper-resultados {
+    width: 100%;
+    padding: 20px 0 60px 0 !important;
+    overflow: hidden !important; /* Swiper precisa disso */
+}
+
+.swiper-button-next, .swiper-button-prev {
+    color: #b08d57 !important; /* Dourado do site */
+}
+
+.swiper-pagination-bullet-active {
+    background: #b08d57 !important;
+}
 /* ============================================================
    9. RESPONSIVIDADE (MOBILE & TABLET) - CONSOLIDADA
 ============================================================ */
@@ -829,7 +842,7 @@ h1, h2, h3 {
         height: 350px !important; }
 
     .section-resultados {
-        background-image: url('IMG/abstract background Mobile.png') !important;
+        background-image: url('IMG/Background.Geral\ \(1\).png') !important;
         padding: 60px 5% !important;
     }
     .section-resultados h2 {
