@@ -835,34 +835,43 @@ h1, h2, h3 {
     .video-container-local { height: 400px !important; }
     .video-player { border-radius: 15px; }
 
-    /* --- SEÇÃO 4: RESULTADOS (AJUSTE CARROSSEL MOBILE) --- */
+    /* --- AJUSTE FINAL CARROSSEL MOBILE (SEM DOIDEIRA) --- */
+@media (max-width: 768px) {
     .section-resultados {
-        background-image: url('IMG/abstract background Mobile.png') !important; /* Imagem vertical para celular */
-        background-attachment: scroll !important; /* Evita travamentos no mobile */
-        padding: 60px 5% !important;
+        padding: 60px 0 !important; /* Zeramos as laterais para o swiper usar tudo */
+        background-image: url('IMG/Background.Geral\ \(1\).png') !important;
+        background-attachment: scroll !important;
+        width: 100vw !important; /* Força a largura total da janela */
+        overflow-x: hidden !important;
+        display: block !important; /* Tira o flex que pode estar desalinhando */
+    }
+
+    .section-resultados .container-premium {
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
     }
 
     .section-resultados h2 {
-        font-size: 2.2rem !important;
-        margin-bottom: 30px !important;
+        font-size: 2rem !important;
+        padding: 0 20px !important; /* Só o título ganha respiro lateral */
+        margin-bottom: 40px !important;
     }
+
+    /* O Swiper precisa dominar a tela */
     .swiper-resultados {
         width: 100% !important;
-        padding: 10px 0 50px 0 !important;
-        overflow: hidden !important;
+        padding-bottom: 50px !important;
     }
 
     .resultado-card {
-        width: 90% !important; /* Dá um respiro nas laterais para ver o próximo card */
+        width: 85% !important; /* Card centralizado, aparecendo uma pontinha do próximo */
         margin: 0 auto !important;
+        background: rgba(255, 255, 255, 0.95) !important; /* Reforça o branco para ler melhor */
     }
 
     .resultado-img-wrapper {
-        height: 300px !important; /* Altura ajustada para telas menores */
+        height: 280px !important; /* Um pouco menor para caber na tela do cel */
     }
-
-    /* Esconde as setas no mobile, o foco é o deslize do dedo (touch) */
-    .swiper-button-next, .swiper-button-prev {
-        display: none !important;
-    }
+}
 }
