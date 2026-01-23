@@ -755,6 +755,66 @@ h1, h2, h3 {
     text-decoration: none !important;
     animation: pulsar 2s ease-in-out infinite !important;
 }
+/* --- SEÇÃO AVALIAÇÃO INTELIGENTE --- */
+.section-avaliacao {
+    padding: 100px 5%;
+    background-image: url('IMG/Background.Geral (1).png') !important;
+    background-attachment: fixed !important;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+}
+
+.form-container-glass {
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(15px);
+    border-radius: 30px;
+    padding: 60px;
+    border: 1px solid rgba(176, 141, 87, 0.3);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+    max-width: 800px !important;
+    width: 100%;
+}
+
+.desc-avaliacao {
+    color: #5d4037;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+.grid-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.form-group { display: flex; flex-direction: column; text-align: left; }
+.form-group.full-width { grid-column: span 2; }
+
+.form-group label {
+    font-weight: 600;
+    color: #3e2723;
+    margin-bottom: 8px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.form-group input, .form-group select {
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    background: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-full {
+    grid-column: span 2;
+    margin-top: 20px;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+}
+
+
 /* ============================================================
    9. RESPONSIVIDADE (MOBILE & TABLET) - CONSOLIDADA
 ============================================================ */
@@ -1043,4 +1103,11 @@ h1, h2, h3 {
     text-decoration: none !important;
     z-index: 99;
 }
+* --- MOBILE AVALIAÇÃO --- */
+
+    .grid-form { grid-template-columns: 1fr; }
+    .form-group.full-width { grid-column: span 1; }
+    .form-container-glass { padding: 40px 25px; }
+    .section-avaliacao { background-attachment: scroll !important; }
+
 }
