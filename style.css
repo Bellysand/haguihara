@@ -877,24 +877,7 @@ h1, h2, h3 {
     padding: 18px 45px !important;
 }
 
-/* --- AJUSTE MOBILE --- */
-@media (max-width: 768px) {
-    .grid-tecnologia {
-        grid-template-columns: 1fr !important;
-        gap: 40px !important;
-    }
-    .tech-title-custom {
-        font-size: 2.2rem !important;
-        text-align: center !important;
-    }
-    .text-premium-large {
-        font-size: 1.15rem !important;
-        text-align: center !important;
-    }
-    .tech-list-clean li {
-        justify-content: center;
-    }
-}
+
 /* ============================================================
     9. RESPONSIVIDADE (MOBILE & TABLET) - TALENTO FINAL
 ============================================================ */
@@ -1024,5 +1007,23 @@ h1, h2, h3 {
     .tech-content {
         padding: 20px !important;
     }
+    /* --- AJUSTE MOBILE SEÇÃO TECNOLOGIA --- */
+@media (max-width: 768px) {
+    .grid-tecnologia {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+    }
+    .tech-title-custom {
+        font-size: 2.2rem !important;
+        text-align: center !important;
+    }
+    .text-premium-large {
+        font-size: 1.15rem !important;
+        text-align: center !important;
+    }
+    .tech-list-clean li {
+        justify-content: center;
+    }
+}
 }
 
