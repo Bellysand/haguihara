@@ -846,6 +846,160 @@ h1, h2, h3 {
     color: #3e2723;
     font-weight: 500;
 }
+/* --- SEÇÃO TECNOLOGIA: DESIGN REFORÇADO --- */
+.section-tecnologia {
+    padding: 100px 5%;
+    background-image: url('IMG/Background.Geral (1).png') !important;
+    background-attachment: fixed !important;
+    background-size: cover;
+    position: relative;
+    z-index: 10;
+}
+
+
+.grid-tecnologia {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr; /* Mantém a proporção imagem/texto */
+    gap: 120px; /* Aumentei o espaço para descolar a foto do texto */
+    align-items: center;
+    max-width: 1500px; /* Aumentado para o conteúdo chegar mais perto dos cantos da tela */
+    margin: 0 auto;
+    width: 95%; /* Garante que em telas médias o conteúdo use bem o espaço */
+}
+
+.tech-image-container {
+    display: flex;
+    justify-content: flex-start; /* Força a imagem a "colar" no limite esquerdo da grade */
+    width: 100%;
+}
+
+.img-tech {
+    width: 100%;
+    max-width: 600px; /* Limite de tamanho da foto para não ficar gigante no PC */
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+.grid-tecnologia {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr; /* Mantém a proporção imagem/texto */
+    gap: 120px; /* Aumentei o espaço para descolar a foto do texto */
+    align-items: center;
+    max-width: 1500px; /* Aumentado para o conteúdo chegar mais perto dos cantos da tela */
+    margin: 0 auto;
+    width: 95%; /* Garante que em telas médias o conteúdo use bem o espaço */
+}
+
+.tech-image-container {
+    display: flex;
+    justify-content: flex-start; /* Força a imagem a "colar" no limite esquerdo da grade */
+    width: 100%;
+}
+
+.img-tech {
+    width: 100%;
+    max-width: 600px; /* Limite de tamanho da foto para não ficar gigante no PC */
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.tech-experience-badge {
+    position: absolute;
+    bottom: -20px;
+    right: -10px;
+    background: #b08d57;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.tech-experience-badge span { display: block; font-size: 0.8rem; text-transform: uppercase; }
+.tech-experience-badge strong { font-size: 1.2rem; }
+
+.tech-title-custom {
+    font-family: var(--fonte-principal);
+    font-size: 3rem !important;
+    color: #3e2723 !important;
+    line-height: 1.2;
+    margin: 15px 0 25px 0 !important;
+    text-shadow: 2px 2px 4px rgba(255,255,255,0.5) !important;
+}
+
+.text-premium-large {
+    font-size: 1.2rem !important;
+    line-height: 1.6;
+    color: #3e2723;
+    margin-bottom: 30px;
+}
+
+.tech-list-clean {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.tech-list-clean li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+    color: #3e2723;
+}
+
+.tech-list-clean i { color: #b08d57; margin-top: 5px; }
+/* --- SEÇÃO 8: RODAPÉ --- */
+.main-footer {
+    background-color: #3e2723;
+    color: #fff;
+    padding: 80px 0 20px 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.footer-logo .text-atelier { color: #c5a980; display: block; font-size: 1.5rem; }
+.footer-logo .text-metodo { color: #b08d57; font-size: 0.8rem; letter-spacing: 2px; }
+
+.footer-info p { margin-top: 20px; color: #d7ccc8; line-height: 1.6; }
+
+.footer-contact h4, .footer-links h4 {
+    color: #c5a980;
+    margin-bottom: 25px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+}
+
+.footer-contact ul { list-style: none; padding: 0; }
+.footer-contact li { margin-bottom: 15px; color: #d7ccc8; display: flex; gap: 10px; align-items: center; }
+.footer-contact i { color: #c5a980; }
+
+.footer-links { display: flex; flex-direction: column; gap: 12px; }
+.footer-links a { color: #d7ccc8; text-decoration: none; transition: 0.3s; }
+.footer-links a:hover { color: #fff; padding-left: 5px; }
+
+/* Créditos Finais */
+.footer-credits {
+    border-top: 1px solid rgba(197, 169, 128, 0.2);
+    padding-top: 20px;
+    font-size: 0.85rem;
+    color: #a1887f;
+}
+
+.credits-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dev-name strong { color: #c5a980; }
+.dev-name a { color: #c5a980; text-decoration: none; font-weight: bold; }
 
 /* ============================================================
    9. RESPONSIVIDADE (MOBILE & TABLET) - CONSOLIDADA
@@ -1188,5 +1342,47 @@ h1, h2, h3 {
         font-size: 1.8rem !important;
         line-height: 1.2 !important;
     }
+    /* --- AJUSTE TECNOLOGIA MOBILE --- */
+.section-tecnologia {
+    padding: 60px 20px !important;
+    background-attachment: scroll !important;
+}
+
+.grid-tecnologia {
+    grid-template-columns: 1fr !important; /* Força uma coluna */
+    text-align: center;
+    gap: 40px;
+}
+
+.tech-image-container { order: 2; } /* Imagem vai para baixo no celular */
+.tech-content { order: 1; } /* Texto em cima para conversão rápida */
+
+.tech-title-custom {
+    font-size: 2.2rem !important;
+    text-align: center !important;
+}
+
+.text-premium-large {
+    font-size: 1.1rem !important;
+    text-align: center !important;
+}
+
+.tech-list-clean li { text-align: left; }
+/* --- RODAPÉ MOBILE --- */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr !important;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .footer-contact li { justify-content: center; }
+
+    .credits-flex {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
 }
 }
