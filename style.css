@@ -814,39 +814,87 @@ h1, h2, h3 {
     border: none;
     cursor: pointer;
 }
-/* --- PADRONIZAÇÃO SEÇÃO 6: TECNOLOGIA --- */
+/* --- SEÇÃO 6: TECNOLOGIA (DESIGN EDITORIAL) --- */
 .section-tecnologia {
-    padding: 100px 5%;
-    /* Aplica o background fixo igual às seções 2 e 4 */
+    padding: 120px 5%;
     background-image: url('IMG/Background.Geral (1).png') !important;
     background-attachment: fixed !important;
     background-size: cover;
     position: relative;
 }
 
-/* Título com Glow Padronizado */
-.section-tecnologia h2 {
+.grid-tecnologia {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr; /* Proporção equilibrada */
+    gap: 80px; /* Mais espaço entre foto e texto */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Título Customizado (Não é o padrão de seção) */
+.tech-title-custom {
+    font-family: var(--fonte-principal);
+    font-size: 3.2rem !important;
     color: #3e2723 !important;
-    font-size: 3.5rem !important;
-    font-weight: 900 !important;
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.9), 
-                 0 0 10px rgba(255, 255, 255, 0.6) !important;
+    line-height: 1.2;
+    margin: 15px 0 25px 0 !important;
+    text-shadow: 2px 2px 4px rgba(255,255,255,0.5) !important;
+    text-align: left !important;
 }
 
-/* Estilo do Botão Tech */
-.btn-tech {
-    display: inline-flex !important;
-    margin-top: 20px !important;
-    text-decoration: none !important;
-    animation: pulsar 2s ease-in-out infinite !important;
-}
-
-/* Ajuste do Texto para melhor leitura sobre o fundo */
-.text-premium, .tech-list li {
+/* Parágrafo com letra maior */
+.text-premium-large {
+    font-size: 1.35rem !important; /* Letra aumentada conforme pedido */
+    line-height: 1.6;
     color: #3e2723;
-    font-weight: 500;
+    margin-bottom: 30px;
+    text-align: left;
 }
 
+.tech-list-clean {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 40px;
+}
+
+.tech-list-clean li {
+    font-size: 1.15rem;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #3e2723;
+}
+
+.tech-list-clean i {
+    color: #b08d57;
+    font-size: 1.3rem;
+}
+
+.btn-tech-ajustado {
+    margin-top: 0 !important;
+    padding: 18px 45px !important;
+}
+
+/* --- AJUSTE MOBILE --- */
+@media (max-width: 768px) {
+    .grid-tecnologia {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+    }
+    .tech-title-custom {
+        font-size: 2.2rem !important;
+        text-align: center !important;
+    }
+    .text-premium-large {
+        font-size: 1.15rem !important;
+        text-align: center !important;
+    }
+    .tech-list-clean li {
+        justify-content: center;
+    }
+}
 /* ============================================================
     9. RESPONSIVIDADE (MOBILE & TABLET) - TALENTO FINAL
 ============================================================ */
