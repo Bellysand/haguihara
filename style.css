@@ -879,133 +879,106 @@ h1, h2, h3 {
 
 
 /* ============================================================
-    9. RESPONSIVIDADE (MOBILE & TABLET) - TALENTO FINAL
+    9. RESPONSIVIDADE (MOBILE) - ESTABILIZAÇÃO TOTAL
 ============================================================ */
-
-/* --- 1. TABLET (Telas até 1024px) --- */
-@media (max-width: 1024px) {
-    .beneficios-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 20px;
-    }
-}
-
-/* --- 2. CELULAR (Telas até 768px) --- */
 @media (max-width: 768px) {
     
-    /* GERAL: Impede que qualquer coisa escape para o lado */
+    /* GERAL: Garante que nada transborde */
     html, body {
         overflow-x: hidden !important;
+        position: relative;
         width: 100%;
     }
 
-    /* TOPBAR: Ajuste de altura para não cobrir o Hero */
+    /* HEADER: Força a logo e o menu a ficarem visíveis */
     .topbar {
-        min-height: 70px !important;
-        padding: 5px 0 !important;
+        position: fixed !important;
+        height: 80px !important;
+        padding: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        z-index: 9999 !important;
+    }
+
+    .header-flex {
+        padding: 0 15px !important;
+        width: 100% !important;
     }
 
     .img-logo-header {
-        height: 50px !important;
+        height: 45px !important; /* Tamanho seguro para não quebrar */
     }
 
-    /* SEÇÃO HERO: Ajuste de altura e leitura */
+    /* HERO: O grande vilão do desalinhamento */
     .hero-section {
-        padding-top: 120px !important;
-        padding-bottom: 40px !important;
-        min-height: auto !important;
-        background-attachment: scroll !important;
+        padding-top: 100px !important; /* Espaço para o Header fixo */
+        min-height: 80vh !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+        background-attachment: scroll !important; /* Resolve bug de fundo no Android/iOS */
+    }
+
+    .hero-text {
+        width: 100% !important;
+        padding: 0 20px !important;
+        left: 0 !important; /* Remove o deslocamento do desktop */
     }
 
     .hero-text h1 {
         font-size: 1.8rem !important;
-        padding: 0 10px;
+        line-height: 1.2 !important;
     }
 
-    /* SEÇÃO MÉTODO (CARDS) */
-    .section-metodo {
+    /* SEÇÃO TECNOLOGIA (Pós-Hero) */
+    .section-tecnologia {
         padding: 60px 20px !important;
+        margin-top: 0 !important;
     }
 
-    .beneficio-card {
-        width: 100% !important;
-        margin-bottom: 15px;
-    }
-
-    /* SEÇÃO RESULTADOS: Forçar Swiper a ocupar 100% */
-    .section-resultados {
-        padding: 50px 0 !important;
-        width: 100vw !important;
-    }
-
-    .resultado-card {
-        width: 90% !important;
-        margin: 0 auto;
-    }
-
-    /* SEÇÃO PACOTES (BOLHAS) */
-    .pacotes-wrapper {
-        flex-direction: column !important;
-        align-items: center !important;
+    .grid-tecnologia {
+        display: flex !important;
+        flex-direction: column !important; /* Texto em cima, Foto embaixo */
         gap: 30px !important;
     }
 
-    .pacote-circle {
-        width: 270px !important;
-        height: 270px !important;
+    .tech-content {
+        order: 1 !important;
     }
 
-    /* --- TALENTO NO FORMULÁRIO (CORREÇÃO DA FOTO) --- */
-    .section-avaliacao {
-        padding: 60px 15px !important; /* Espaço para o formulário não encostar na borda */
-        background-attachment: scroll !important;
+    .tech-image-container {
+        order: 2 !important;
     }
 
+    .tech-title-custom {
+        font-size: 1.8rem !important;
+        text-align: center !important;
+    }
+
+    /* SEÇÃO MÉTODO (Cards) */
+    .beneficios-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+
+    /* SEÇÃO AVALIAÇÃO (Formulário) */
     .form-container-glass {
-        padding: 30px 20px !important;
-        width: 100% !important;
-        border-radius: 20px !important;
+        padding: 25px 15px !important;
+        margin: 0 auto !important;
     }
 
     .grid-form {
         display: flex !important;
-        flex-direction: column !important; /* Força um campo por linha */
-        gap: 15px !important;
+        flex-direction: column !important;
     }
 
-    .form-group {
-        width: 100% !important;
-    }
-
-    .form-group label {
-        font-size: 0.9rem !important;
-        margin-bottom: 5px !important;
-    }
-
-    .form-group input, 
-    .form-group select {
-        width: 100% !important;
-        height: 48px !important;
-        font-size: 16px !important; /* Evita o zoom automático do iPhone */
-        padding: 10px 15px !important;
-    }
-
-    .btn-full {
+    /* BOTÕES GERAIS */
+    .btn-hero-whatsapp, .btn-full, .btn-tech-ajustado {
         width: 100% !important;
         font-size: 1rem !important;
         padding: 15px !important;
-        margin-top: 10px !important;
-    }
-
-    /* SEÇÃO TECNOLOGIA (GRID) */
-    .grid-tecnologia {
-        grid-template-columns: 1fr !important;
-        gap: 30px !important;
-        text-align: center;
-    }
-
-    .tech-content {
-        padding: 20px !important;
     }
 }
-
