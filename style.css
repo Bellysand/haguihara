@@ -311,6 +311,7 @@ h1, h2, h3 {
     object-fit: contain !important;
     display: block !important;
 }
+
 /* --- SEÇÃO 2: MÉTODO HAGUIHARA (VERSÃO FINAL COM TRANSIÇÃO SUAVE) --- */
 
 .section-metodo {
@@ -813,7 +814,38 @@ h1, h2, h3 {
     border: none;
     cursor: pointer;
 }
+/* --- PADRONIZAÇÃO SEÇÃO 6: TECNOLOGIA --- */
+.section-tecnologia {
+    padding: 100px 5%;
+    /* Aplica o background fixo igual às seções 2 e 4 */
+    background-image: url('IMG/Background.Geral (1).png') !important;
+    background-attachment: fixed !important;
+    background-size: cover;
+    position: relative;
+}
 
+/* Título com Glow Padronizado */
+.section-tecnologia h2 {
+    color: #3e2723 !important;
+    font-size: 3.5rem !important;
+    font-weight: 900 !important;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.9), 
+                 0 0 10px rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Estilo do Botão Tech */
+.btn-tech {
+    display: inline-flex !important;
+    margin-top: 20px !important;
+    text-decoration: none !important;
+    animation: pulsar 2s ease-in-out infinite !important;
+}
+
+/* Ajuste do Texto para melhor leitura sobre o fundo */
+.text-premium, .tech-list li {
+    color: #3e2723;
+    font-weight: 500;
+}
 
 /* ============================================================
    9. RESPONSIVIDADE (MOBILE & TABLET) - CONSOLIDADA
@@ -997,6 +1029,14 @@ h1, h2, h3 {
         animation: entradaSuave 1.2s ease-out 0.8s forwards, 
                     pulsar 2s ease-in-out 2.5s infinite !important;
     }
+    /*seção tecnologia*/
+
+    .section-tecnologia h2 {
+        font-size: 2.2rem !important;
+    }
+    .section-tecnologia {
+        background-attachment: scroll !important; /* Melhora performance no mobile */
+    }
 
     /* SEÇÃO 2 (MÉTODO) */
     .section-metodo { padding: 80px 5% !important; }
@@ -1103,11 +1143,50 @@ h1, h2, h3 {
     text-decoration: none !important;
     z-index: 99;
 }
-* --- MOBILE AVALIAÇÃO --- */
+/* --- MOBILE AVALIAÇÃO --- */
 
-    .grid-form { grid-template-columns: 1fr; }
-    .form-group.full-width { grid-column: span 1; }
-    .form-container-glass { padding: 40px 25px; }
-    .section-avaliacao { background-attachment: scroll !important; }
+    /* --- AJUSTE EXCLUSIVO FORMULÁRIO MOBILE --- */
+@media (max-width: 768px) {
+    .section-avaliacao {
+        padding: 60px 15px !important; /* Respiro lateral para não colar na borda */
+        width: 100% !important;
+        overflow-x: hidden !important;
+    }
 
+    .form-container-glass {
+        padding: 30px 20px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+    }
+
+    .grid-form {
+        display: flex !important;
+        flex-direction: column !important; /* Força os campos um embaixo do outro */
+        gap: 15px !important;
+        width: 100% !important;
+    }
+
+    .form-group {
+        width: 100% !important;
+    }
+
+    .form-group input, 
+    .form-group select {
+        width: 100% !important; /* Garante que os campos preencham a largura */
+        font-size: 16px !important; /* Evita zoom automático no iPhone ao clicar */
+    }
+
+    .btn-full {
+        width: 100% !important;
+        margin-top: 10px !important;
+        padding: 18px !important;
+    }
+
+    /* Título do formulário no mobile */
+    .section-avaliacao h2 {
+        font-size: 1.8rem !important;
+        line-height: 1.2 !important;
+    }
+}
 }
