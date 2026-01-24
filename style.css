@@ -1143,14 +1143,12 @@ h1, h2, h3 {
     text-decoration: none !important;
     z-index: 99;
 }
-/* --- MOBILE AVALIAÇÃO --- */
-
-    /* --- AJUSTE EXCLUSIVO FORMULÁRIO MOBILE --- */
+/* --- CORREÇÃO FORMULÁRIO MOBILE --- */
 @media (max-width: 768px) {
     .section-avaliacao {
-        padding: 60px 15px !important; /* Respiro lateral para não colar na borda */
+        padding: 60px 20px !important;
         width: 100% !important;
-        overflow-x: hidden !important;
+        display: block !important;
     }
 
     .form-container-glass {
@@ -1158,13 +1156,13 @@ h1, h2, h3 {
         width: 100% !important;
         max-width: 100% !important;
         margin: 0 auto !important;
+        box-sizing: border-box !important;
     }
 
     .grid-form {
         display: flex !important;
-        flex-direction: column !important; /* Força os campos um embaixo do outro */
-        gap: 15px !important;
-        width: 100% !important;
+        flex-direction: column !important; /* Força uma coluna só */
+        gap: 20px !important;
     }
 
     .form-group {
@@ -1173,20 +1171,17 @@ h1, h2, h3 {
 
     .form-group input, 
     .form-group select {
-        width: 100% !important; /* Garante que os campos preencham a largura */
-        font-size: 16px !important; /* Evita zoom automático no iPhone ao clicar */
+        width: 100% !important;
+        height: 50px !important;
+        font-size: 16px !important; /* Evita o zoom chato do iPhone */
     }
 
     .btn-full {
         width: 100% !important;
         margin-top: 10px !important;
         padding: 18px !important;
+        font-size: 1.1rem !important;
     }
+}
+}
 
-    /* Título do formulário no mobile */
-    .section-avaliacao h2 {
-        font-size: 1.8rem !important;
-        line-height: 1.2 !important;
-    }
-}
-}
