@@ -1023,57 +1023,97 @@ h1, h2, h3 {
 }
 
 .tech-list-clean i { color: #b08d57; margin-top: 5px; }
-/* --- SEÇÃO 8: RODAPÉ --- */
+/* ============================================================
+   7. RODAPÉ (FOOTER) - ESTILO VANGUARD VISUALS
+============================================================ */
 .main-footer {
-    background-color: #3e2723;
-    color: #fff;
-    padding: 80px 0 20px 0;
-    font-family: 'Montserrat', sans-serif;
+    background-color: #2c1b18; /* Marrom ultra profundo */
+    color: #f4f1ea;
+    padding-top: 80px;
+    border-top: 4px solid #b08d57;
 }
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr;
     gap: 50px;
-    margin-bottom: 50px;
+    padding-bottom: 60px;
 }
 
-.footer-logo .text-atelier { color: #c5a980; display: block; font-size: 1.5rem; }
-.footer-logo .text-metodo { color: #b08d57; font-size: 0.8rem; letter-spacing: 2px; }
+/* Logo no Footer */
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
 
-.footer-info p { margin-top: 20px; color: #d7ccc8; line-height: 1.6; }
-
-.footer-contact h4, .footer-links h4 {
-    color: #c5a980;
-    margin-bottom: 25px;
+.footer-logo .text-atelier {
     font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
+    color: #c6a67d;
+    font-weight: bold;
 }
 
-.footer-contact ul { list-style: none; padding: 0; }
-.footer-contact li { margin-bottom: 15px; color: #d7ccc8; display: flex; gap: 10px; align-items: center; }
-.footer-contact i { color: #c5a980; }
+.footer-logo .text-metodo {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #b08d57;
+}
 
-.footer-links { display: flex; flex-direction: column; gap: 12px; }
-.footer-links a { color: #d7ccc8; text-decoration: none; transition: 0.3s; }
-.footer-links a:hover { color: #fff; padding-left: 5px; }
+/* Estilo das Listas e Títulos */
+.main-footer h4 {
+    font-family: 'Playfair Display', serif;
+    color: #c6a67d;
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+}
 
-/* Créditos Finais */
+.footer-contact ul, .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.main-footer a, .footer-contact li {
+    color: #d7ccc8;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: 0.3s;
+}
+
+.main-footer a:hover {
+    color: #c6a67d;
+    padding-left: 5px;
+}
+
+/* Créditos e Assinatura */
 .footer-credits {
-    border-top: 1px solid rgba(197, 169, 128, 0.2);
-    padding-top: 20px;
-    font-size: 0.85rem;
-    color: #a1887f;
+    background: #1e1210;
+    padding: 25px 0;
+    border-top: 1px solid rgba(176, 141, 87, 0.2);
 }
 
 .credits-flex {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 0.85rem;
+    color: #8d6e63;
 }
 
-.dev-name strong { color: #c5a980; }
-.dev-name a { color: #c5a980; text-decoration: none; font-weight: bold; }
+.dev-name strong {
+    color: #c6a67d;
+}
+
+.dev-name a {
+    color: #b08d57 !important;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
 
 /* ============================================================
    9. RESPONSIVIDADE (MOBILE & TABLET) - CONSOLIDADA
@@ -1443,20 +1483,16 @@ h1, h2, h3 {
 
 .tech-list-clean li { text-align: left; }
 /* --- RODAPÉ MOBILE --- */
-@media (max-width: 768px) {
+/* Responsividade */
+@media (max-width: 992px) {
     .footer-grid {
-        grid-template-columns: 1fr !important;
+        grid-template-columns: 1fr;
         text-align: center;
-        gap: 40px;
     }
-
-    .footer-contact li { justify-content: center; }
-
-    .credits-flex {
+    .footer-logo, .credits-flex {
+        align-items: center;
         flex-direction: column;
         gap: 15px;
-        text-align: center;
     }
 }
-}
-}
+}}
