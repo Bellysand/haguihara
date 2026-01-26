@@ -557,84 +557,131 @@ h1, h2, h3 {
     transition: transform 0.4s ease !important; 
     box-shadow: 0 20px 40px rgba(176, 141, 87, 0.2) !important;
 }
-/* --- SEÇÃO 4: RESULTADOS --- */
+/* ============================================================
+  /* ============================================================
+   4. SEÇÃO DE RESULTADOS (PADRONIZADA & CARROSSEL)
+============================================================ */
 .section-resultados {
     padding: 100px 5%;
     background-image: url('IMG/Background.Geral (1).png') !important;
     background-size: cover !important;
     background-position: center !important;
     background-attachment: fixed !important; 
-    background-repeat: no-repeat !important;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: block !important;
 }
 
-/* Título Padrão Seções 2 e 3 */
+/* Títulos Padronizados */
 .section-resultados .header-section {
-    margin-bottom: 60px;
-    text-align: center;
+    margin-bottom: 60px !important;
+    text-align: center !important;
+}
+
+.section-resultados .subtitle-premium {
+    display: block !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 0.9rem !important;
+    color: #b08d57 !important;
+    letter-spacing: 3px !important;
+    text-transform: uppercase !important;
+    font-weight: 600 !important;
+    margin-bottom: 10px !important;
 }
 
 .section-resultados h2 {
+    font-family: 'Playfair Display', serif !important;
     color: #3e2723 !important;
     font-size: 3.5rem !important;
     font-weight: 900 !important;
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.9), 0 0 10px rgba(255, 255, 255, 0.6) !important;
+    line-height: 1.2 !important;
 }
 
-/* Grid e Cards */
-.resultados-grid {
+/* Estrutura do Carrossel */
+.swiper-resultados {
+    width: 100% !important;
+    max-width: 1240px;
+    margin: 0 auto !important;
+    overflow: hidden !important; 
+    position: relative;
+    padding: 20px 10px 60px 10px !important;
+}
+
+.swiper-wrapper {
+    display: flex !important;
+    align-items: stretch !important;
+}
+
+.swiper-slide {
+    height: auto !important;
     display: flex !important;
     justify-content: center !important;
-    gap: 30px;
-    width: 100%;
-    max-width: 1200px;
+    padding: 15px;
 }
 
+/* Cards de Resultado Premium */
 .resultado-card {
-    flex: 1;
-    max-width: 450px;
-    background: rgba(255, 255, 255, 0.92) !important;
+    width: 100% !important;
+    max-width: 380px !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(5px) !important;
     border-radius: 25px;
     overflow: hidden;
     box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-    border: 1px solid rgba(255, 255, 255, 0.5) !important;
-    transition: all 1.5s ease-out !important;
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    transition: transform 0.3s ease;
+}
+
+.resultado-card:hover {
+    transform: translateY(-5px);
 }
 
 .resultado-img-wrapper {
-    width: 100%;
-    height: 400px;
-    position: relative;
+    width: 100% !important;
+    height: 380px !important;
+    position: relative !important;
+    overflow: hidden !important;
+    background: #f4f1ea;
 }
 
 .resultado-img-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
 }
 
 .resultado-info {
-    padding: 25px;
-    text-align: center;
-    background: white;
-}
-.swiper-resultados {
-    width: 100%;
-    padding: 20px 0 60px 0 !important;
-    overflow: hidden !important; /* Swiper precisa disso */
+    padding: 25px !important;
+    text-align: center !important;
+    flex-grow: 1 !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
+.resultado-info h3 {
+    color: #3e2723;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+}
+
+.resultado-info p {
+    color: #5d4037;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Controles */
 .swiper-button-next, .swiper-button-prev {
-    color: #b08d57 !important; /* Dourado do site */
+    color: #b08d57 !important;
 }
 
 .swiper-pagination-bullet-active {
     background: #b08d57 !important;
 }
-
 /* --- SEÇÃO 5: PACOTES PROMOCIONAIS --- */
 .section-pacotes {
     padding: 100px 5%;

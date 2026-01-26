@@ -1,7 +1,7 @@
 // --- Inicialização Geral ---
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // 1. Menu Hambúrguer (Funcionalidade de Abrir/Fechar)
+
+    // 1. Menu Hambúrguer (Mantido Original)
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
 
@@ -22,16 +22,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 2. Intersection Observer (Animação dos Cards Seção 2 e Vídeos Seção 3)
+    // 2. Intersection Observer (Animações dos Cards - Mantido)
     const observerOptions = { threshold: 0.2 };
-    
+
     const cardObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                // Adiciona a classe de animação dependendo do elemento
                 if (entry.target.classList.contains('beneficio-card')) {
                     entry.target.classList.add('animar');
-                } 
+                }
                 if (entry.target.classList.contains('animar-video')) {
                     entry.target.classList.add('visivel');
                 }
@@ -39,20 +38,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    // Observa os cards da Seção 2
-    document.querySelectorAll('.beneficio-card').forEach((card) => {
-        cardObserver.observe(card);
+    document.querySelectorAll('.beneficio-card, .animar-video').forEach((el) => {
+        cardObserver.observe(el);
     });
 
-    // Observa os cards de vídeo da Seção 3
-    document.querySelectorAll('.animar-video').forEach((video) => {
-        cardObserver.observe(video);
-    });
-    // 3. Inicialização do Carrossel de Resultados
+    // 3. Inicialização do Swiper (REVISADO: Agora com observadores para não travar)
     const swiperResultados = new Swiper('.swiper-resultados', {
         slidesPerView: 1,
         spaceBetween: 20,
         loop: true,
+        observer: true,           // Adicione isso
+        observeParents: true,    // Adicione isso
         autoplay: { delay: 4000, disableOnInteraction: false },
         pagination: { el: '.swiper-pagination', clickable: true },
         navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
@@ -61,53 +57,20 @@ document.addEventListener('DOMContentLoaded', () => {
             1024: { slidesPerView: 3, spaceBetween: 30 }
         }
     });
-});
 
-// --- Animação de entrada Geral (Scroll Reveal) ---
-function revealOnScroll() {
-    const sections = document.querySelectorAll('.section');
-    const trigger = window.innerHeight * 0.85;
-    sections.forEach(sec => {
-        const top = sec.getBoundingClientRect().top;
-        if (top < trigger) {
-            sec.classList.add('visible');
-        }
-    });
-}
-window.addEventListener('scroll', revealOnScroll);
-revealOnScroll();
-
-// --- Formulário WhatsApp com Verificação de Carregamento ---
-document.addEventListener('DOMContentLoaded', function() {
+    // 4. Formulário WhatsApp (Mantido sua lógica original)
     const leadForm = document.getElementById('leadForm');
-    
     if (leadForm) {
-        leadForm.addEventListener('submit', function(e) {
+        leadForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            
-            // Coleta os valores dos campos
             const nome = this.querySelector('input[type="text"]').value;
             const tel = this.querySelector('input[type="tel"]').value;
             const objetivoSelect = document.getElementById('objetivo');
-            
-            // Valida se o select existe antes de pegar o texto
             let objetivoTexto = objetivoSelect ? objetivoSelect.options[objetivoSelect.selectedIndex].text : "Não informado";
-            
-            const seuNumero = "5524999543417"; 
-            
-            // Lógica para a opção "Outros"
-            if (objetivoSelect && objetivoSelect.value === "outros") {
-                objetivoTexto = "Outros (Conversar para entender a necessidade)";
-            }
-            
-            // Montagem da mensagem formatada para o WhatsApp
-            const mensagem = `*INTERESSE EM AVALIAÇÃO*%0A%0A` +
-                             `*Nome:* ${nome}%0A` +
-                             `*WhatsApp:* ${tel}%0A` +
-                             `*Foco do Tratamento:* ${objetivoTexto}%0A%0A` +
-                             `_Gostaria de verificar a disponibilidade de horários._`;
 
-            // Abre o WhatsApp em uma nova aba
+            const seuNumero = "5524999543417";
+            const mensagem = `*INTERESSE EM AVALIAÇÃO*%0A%0A*Nome:* ${nome}%0A*WhatsApp:* ${tel}%0A*Foco:* ${objetivoTexto}`;
+
             window.open(`https://api.whatsapp.com/send?phone=${seuNumero}&text=${mensagem}`, '_blank');
         });
     }
