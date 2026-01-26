@@ -87,7 +87,10 @@ h1, h2, h3 {
     margin-top: 0;
 }
 
-/* 3. CABEÇALHO (TOPBAR) */
+/* ============================================================
+/* ============================================================
+    3. CABEÇALHO (TOPBAR) - AJUSTE FINAL 7 ITENS
+============================================================ */
 .topbar {
     position: fixed;
     top: 0;
@@ -105,86 +108,82 @@ h1, h2, h3 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* Estrutura da Logo */
+/* Estrutura da Logo e Correção de Cor */
 .logo-desktop-container {
     display: flex !important;
-    flex-direction: row !important; 
     align-items: center !important;
     text-decoration: none !important;
-    gap: 15px !important;
+    gap: 10px !important;
+    color: inherit !important;
 }
 
 .img-logo-header {
-    height: 90px; 
+    height: 75px;
     width: auto;
 }
 
 .logo-text-group {
     display: flex !important;
-    flex-direction: column !important; 
+    flex-direction: column !important;
     justify-content: center !important;
     text-align: left !important;
-}
-
-.logo-link {
-    display: flex !important;
-    align-items: center !important;
-    text-decoration: none !important;
+    line-height: 1.1 !important;
 }
 
 .text-atelier {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
-    color: #8b4513;
-    font-weight: bold;
-    line-height: 1;
+    font-family: 'Playfair Display', serif !important;
+    font-size: 1.35rem !important;
+    color: #8b4513 !important;
+    font-weight: bold !important;
 }
 
 .text-metodo {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.8rem;
-    color: #b08d57;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 0.65rem !important;
+    color: #b08d57 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
 }
 
 /* Menu de Navegação Desktop */
 .nav-menu {
     display: flex !important;
     align-items: center !important; 
-    gap: 30px !important;
-    height: 100% !important;
+    gap: 12px !important;
 }
 
-.topbar nav a {
+.nav-menu a {
     text-decoration: none !important;
     color: #8b4513 !important;
-    font-size: 1.1rem !important;
+    font-size: 0.88rem !important;
     font-weight: 600 !important;
-    display: flex !important;
-    align-items: center !important; 
-    height: 100% !important;
+    white-space: nowrap !important;
     transition: 0.3s !important;
+}
+
+.nav-menu a:hover {
+    color: #b08d57 !important;
 }
 
 .btn-header {
     background-color: #c6a67d !important;
     color: #fff !important;
-    padding: 10px 22px !important;
+    padding: 8px 18px !important;
     border-radius: 5px !important;
+    font-size: 0.85rem !important;
+    margin-left: 5px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    line-height: 1 !important; 
 }
 
 /* Esconder elementos mobile no desktop */
-.logo-icon-mobile, .menu-toggle {
+.menu-toggle {
     display: none;
 }
 
