@@ -1236,21 +1236,21 @@ h1, h2, h3 {
     }
 
     /* SEÇÃO HERO */
-   /* REAJUSTE SEÇÃO HERO MOBILE - VOLTANDO AO PADRÃO */
+   /* AJUSTE FINAL HERO MOBILE - REPARO DE LAYOUT */
     .hero-section {
         display: flex !important;
         flex-direction: column !important;
         justify-content: center !important;
         align-items: center !important;
-        padding: 120px 20px 60px 20px !important;
+        /* Aumentamos o topo para 140px para não bater no logo */
+        padding: 140px 20px 80px 20px !important; 
         min-height: 100vh !important;
         
-        /* Background com Overlay Suave - Sem quebrar a imagem */
-        background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), 
+        /* Ajuste do Background para não quebrar */
+        background: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), 
                     url('IMG/abstract background Mobile.png') !important;
-        
         background-size: cover !important;
-        background-position: center !important;
+        background-position: center center !important;
         background-repeat: no-repeat !important;
         text-align: center !important;
     }
@@ -1258,26 +1258,32 @@ h1, h2, h3 {
     .hero-text {
         width: 100% !important;
         max-width: 100% !important;
-        margin: 0 !important;
-        position: relative !important;
-        z-index: 5 !important;
+        padding: 0 10px !important; /* Respiro lateral extra */
     }
 
     .hero-text h1 {
-        font-size: 2.1rem !important;
-        line-height: 1.1 !important;
+        /* Diminuímos um pouco a fonte para as palavras não cortarem */
+        font-size: 1.85rem !important; 
+        line-height: 1.2 !important;
         color: #3e2723 !important;
         margin-bottom: 20px !important;
+        font-weight: 800 !important;
     }
 
     .hero-text p {
-        font-size: 1.1rem !important;
+        font-size: 1rem !important;
+        line-height: 1.5 !important;
         color: #5d4037 !important;
-        margin-bottom: 30px !important;
+        margin-bottom: 35px !important;
+        padding: 0 5px !important;
     }
 
-    .hero-text h1 { font-size: 2.1rem !important; }
-    .hero-text p { font-size: 1.1rem !important; }
+    /* Ajuste do botão para não colar no texto */
+    .btn-hero-whatsapp {
+        margin-top: 10px !important;
+        width: 100% !important;
+        max-width: 280px !important;
+    }
 
     /* SEÇÃO TECNOLOGIA */
     .section-tecnologia { padding: 60px 20px !important; background-attachment: scroll !important; }
