@@ -1236,13 +1236,44 @@ h1, h2, h3 {
     }
 
     /* SEÇÃO HERO */
+   /* REAJUSTE SEÇÃO HERO MOBILE - VOLTANDO AO PADRÃO */
     .hero-section {
-        padding-top: 150px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        padding: 120px 20px 60px 20px !important;
         min-height: 100vh !important;
-        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.6)),
+        
+        /* Background com Overlay Suave - Sem quebrar a imagem */
+        background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), 
                     url('IMG/abstract background Mobile.png') !important;
+        
         background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
         text-align: center !important;
+    }
+
+    .hero-text {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        position: relative !important;
+        z-index: 5 !important;
+    }
+
+    .hero-text h1 {
+        font-size: 2.1rem !important;
+        line-height: 1.1 !important;
+        color: #3e2723 !important;
+        margin-bottom: 20px !important;
+    }
+
+    .hero-text p {
+        font-size: 1.1rem !important;
+        color: #5d4037 !important;
+        margin-bottom: 30px !important;
     }
 
     .hero-text h1 { font-size: 2.1rem !important; }
