@@ -1113,154 +1113,192 @@ h1, h2, h3 {
     text-decoration: none;
 }
 /* ============================================================
-   9. RESPONSIVIDADE (MOBILE & TABLET) - VERSÃO VANGUARD
+   9. RESPONSIVIDADE (MOBILE & TABLET) - LIMPEZA FINAL
 ============================================================ */
 
-/* --- 1. TABLET (Até 1024px) --- */
+/* --- 1. TABLET (Telas até 1024px) --- */
 @media (max-width: 1024px) {
     .beneficios-grid {
         grid-template-columns: repeat(2, 1fr) !important;
     }
-    .footer-grid {
-        grid-template-columns: 1fr 1fr !important;
-        gap: 30px;
-    }
 }
 
-/* --- 2. CELULAR (Até 768px) - CONSOLIDADO --- */
+/* --- 2. CELULAR (Telas até 768px) --- */
 @media (max-width: 768px) {
     
-    /* HEADER & NAVEGAÇÃO */
+    /* HEADER & TOPBAR */
     .topbar {
         padding: 5px 0 !important;
-        min-height: 75px !important;
+        background-image: url('IMG/Background.Geral\ \(1\).png') !important;
+        background-size: cover;
+        min-height: 80px !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+
+    .header-flex {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 0 15px !important;
+        width: 100% !important;
+    }
+
+    .logo {
+        display: flex !important;
+        align-items: center !important;
+        gap: 12px !important;
     }
 
     .img-logo-header {
-        height: 50px !important;
+        height: 55px !important;
+        width: auto !important;
+        display: block !important;
+    }
+
+    .logo-text-group {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
     }
 
     .text-atelier {
-        font-size: 1.1rem !important;
+        font-family: 'Playfair Display', serif !important;
+        font-size: 1.15rem !important;
+        color: #8b4513 !important;
+        font-weight: bold !important;
+        line-height: 1.1 !important;
+    }
+
+    .text-metodo {
+        font-family: 'Montserrat', sans-serif !important;
+        font-size: 0.65rem !important;
+        color: #b08d57 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+    }
+
+    /* MENU HAMBÚRGUER & PAINEL NAV */
+    .menu-toggle {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 5px !important;
+        background: transparent !important;
+        border: none !important;
+        cursor: pointer !important;
+    }
+
+    .menu-toggle .bar {
+        width: 28px !important;
+        height: 3px !important;
+        background-color: #8b4513 !important;
+        border-radius: 2px !important;
     }
 
     .nav-menu {
         position: fixed !important;
-        top: 75px !important;           
-        right: -100% !important; 
-        width: 75% !important;          
-        background: linear-gradient(135deg, #ffffff 0%, #f4f1ea 100%) !important;
-        border-radius: 20px 0 0 20px !important; 
-        padding: 20px 0 !important;
-        box-shadow: -10px 0 30px rgba(0,0,0,0.15) !important;
-    }
-
-    .nav-menu.active { right: 0 !important; }
-
-    /* SEÇÃO HERO (MOBILE) */
-    .hero-section {
-        padding-top: 130px !important;
-        background-image: url('IMG/abstract background Mobile.png') !important;
-    }
-
-    .hero-text h1 {
-        font-size: 2rem !important;
-        padding: 0 10px;
-    }
-
-    /* SEÇÃO TECNOLOGIA */
-    .section-tecnologia {
-        padding: 60px 20px !important;
-        background-attachment: scroll !important;
-    }
-
-    .grid-tecnologia {
+        top: 85px !important;           
+        right: -100% !important;
+        width: 65% !important;          
+        max-height: 80vh !important;    
+        background: linear-gradient(135deg, #e8f3e8 0%, #ffffff 100%) !important;
+        border-radius: 20px 0 20px 20px !important;
         display: flex !important;
         flex-direction: column !important;
-        gap: 30px;
+        align-items: center !important;
+        padding: 15px 0 !important;      
+        transition: 0.4s ease-in-out !important;
+        z-index: 2000 !important;
+        box-shadow: -5px 5px 20px rgba(0,0,0,0.1) !important;
+        overflow-y: auto !important;
     }
 
-    .tech-content { order: 1; text-align: center; }
-    .tech-image-container { order: 2; }
-    .tech-title-custom { font-size: 2rem !important; }
+    .nav-menu.active { right: 15px !important; }
 
-    /* SEÇÃO MÉTODO (CARDS) */
-    .beneficios-grid { 
-        grid-template-columns: 1fr !important; 
+    .nav-menu a {
+        display: flex !important;
+        width: 100% !important;
+        padding: 15px 0 !important;
+        font-size: 0.95rem !important;
+        color: #5d4037 !important;
+        font-weight: 700 !important;
+        justify-content: center !important;
     }
-    
-    .beneficio-card {
-        flex-direction: column !important;
+
+    .nav-menu .btn-header {
+        background-color: #c5a980 !important;
+        color: #fff !important;
+        width: 80% !important;        
+        max-width: 160px !important;
+        height: 42px !important;      
+        border-radius: 6px !important;
+        margin: 20px 0 10px 0 !important;
+    }
+
+    /* SEÇÃO HERO */
+    .hero-section {
+        padding-top: 150px !important;
+        min-height: 100vh !important;
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.6)),
+                    url('IMG/abstract background Mobile.png') !important;
+        background-size: cover !important;
         text-align: center !important;
     }
 
-    /* VÍDEOS */
+    .hero-text h1 { font-size: 2.1rem !important; }
+    .hero-text p { font-size: 1.1rem !important; }
+
+    /* SEÇÃO TECNOLOGIA */
+    .section-tecnologia { padding: 60px 20px !important; background-attachment: scroll !important; }
+    .section-tecnologia h2 { font-size: 2.2rem !important; }
+    .grid-tecnologia { grid-template-columns: 1fr !important; gap: 40px !important; }
+    .tech-image-container { order: 2 !important; }
+    .tech-content { order: 1 !important; text-align: center !important; }
+
+    /* SEÇÃO MÉTODO */
+    .section-metodo { padding: 80px 5% !important; }
+    .beneficios-grid { grid-template-columns: 1fr !important; }
+    .beneficio-card { flex-direction: column !important; text-align: center !important; }
+
+    /* SEÇÃO VÍDEOS */
     .video-grid { grid-template-columns: 1fr !important; }
     .video-container-local { height: 350px !important; }
 
-    /* CARROSSEL DE RESULTADOS (AJUSTE FINO) */
+    /* SEÇÃO RESULTADOS (CARROSSEL) */
     .section-resultados {
         padding: 60px 0 !important;
         width: 100vw !important;
         overflow-x: hidden !important;
     }
+    .resultado-card { width: 85% !important; margin: 0 auto !important; }
 
-    .resultado-card {
-        width: 88% !important; /* Mostra melhor o card central */
-        transform: scale(0.95); /* Dá um charme de profundidade */
-    }
+    /* SEÇÃO PACOTES (BOLHAS) */
+    .section-pacotes h2 { font-size: 2.2rem !important; padding: 0 20px !important; }
+    .pacotes-wrapper { gap: 20px !important; flex-direction: column !important; align-items: center !important; }
+    .pacote-circle { width: 280px !important; height: 280px !important; padding: 30px !important; }
+    .pacote-item.destaque .pacote-circle { width: 300px !important; height: 300px !important; }
 
-    .resultado-img-wrapper {
-        height: 320px !important; /* Aumentado um pouco para nitidez */
-    }
-
-    /* PACOTES (CÍRCULOS) */
-    .pacotes-wrapper {
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 40px !important;
-    }
-
-    .pacote-circle {
-        width: 260px !important;
-        height: 260px !important;
-    }
-
-    .pacote-item.destaque .pacote-circle {
-        transform: scale(1.05);
-    }
-
-    /* FORMULÁRIO DE AVALIAÇÃO */
+    /* SEÇÃO AVALIAÇÃO */
     .section-avaliacao { padding: 60px 15px !important; }
-    
-    .grid-form {
-        display: flex !important;
-        flex-direction: column !important;
-    }
-
-    .form-group input, .form-group select {
-        font-size: 16px !important; /* Impede o zoom chato do iPhone */
-    }
-
-    /* FOOTER MOBILE */
-    .footer-grid {
-        grid-template-columns: 1fr !important;
-        text-align: center !important;
-        gap: 40px;
-    }
-
-    .credits-flex {
-        flex-direction: column !important;
-        gap: 15px;
-        text-align: center;
-    }
-
-    /* BOTÃO WHATSAPP FLUTUANTE / FINAL */
-    .btn-pacote, .btn-full {
-        width: 100% !important;
-        min-width: unset !important;
-    }
+    .grid-form { display: flex !important; flex-direction: column !important; gap: 15px !important; }
+    .form-group input, .form-group select { font-size: 16px !important; width: 100% !important; }
 }
 
+/* --- 3. AJUSTES GERAIS (FORA DO MOBILE) --- */
+.container-botao-final {
+    display: flex !important;
+    justify-content: center !important;
+    margin-top: 50px !important;
+    clear: both !important;
+}
 
+.btn-pacote {
+    display: inline-flex !important;
+    min-width: 320px !important;
+    z-index: 99 !important;
+}
 
+@media (max-width: 992px) {
+    .footer-grid { grid-template-columns: 1fr !important; text-align: center !important; }
+    .credits-flex { flex-direction: column !important; gap: 15px !important; text-align: center !important; }
+}
