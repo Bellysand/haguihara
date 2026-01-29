@@ -258,7 +258,7 @@ h1, h2, h3 {
 .hero-text h1 {
     margin-top: 0;
     font-family: 'Playfair Display', serif;
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     color: #8b4513;
     line-height: 1.1;
     margin-bottom: 20px;
@@ -386,27 +386,18 @@ h1, h2, h3 {
     animation: revelarCard 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards !important;
 }
 
-/* Mantém os delays para os cards não subirem todos juntos */
+
 .beneficio-card:nth-child(1).animar { animation-delay: 0.1s !important; }
 .beneficio-card:nth-child(2).animar { animation-delay: 0.3s !important; }
 .beneficio-card:nth-child(3).animar { animation-delay: 0.5s !important; }
-
-/* Efeito Hover Unificado e Intensificado */
 .beneficio-card:hover {
-    /* Faz o card saltar mais (20px) e crescer um pouco mais (5%) */
+  
     transform: translateY(-20px) scale(1.05) !important; 
-    
-    /* Fundo de vidro mais nítido e claro */
     background: rgba(253, 242, 240, 0.5) !important; 
-    
-    /* Borda dourada mais aparente no toque */
     border: 1px solid rgba(139, 69, 19, 0.5) !important;
-    
-    /* Sombra profunda para efeito de flutuação real */
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2) !important;
 }
 
-/* Toque extra: Animação do ícone junto com o card */
 .beneficio-card:hover .icon-area img {
     transform: scale(1.1);
     filter: drop-shadow(0px 0px 10px rgba(212, 163, 115, 0.8));
@@ -1278,8 +1269,6 @@ h1, h2, h3 {
     flex-direction: column !important;
     align-items: center !important; 
     text-align: center !important;
-    
-    /* RESET DE POSIÇÃO: Anulando o "empurrão" do Desktop */
     position: relative !important;
     left: 0 !important; 
     right: 0 !important;
