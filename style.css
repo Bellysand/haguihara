@@ -125,6 +125,7 @@ h1, h2, h3 {
 .img-logo-header {
     height: 75px;
     width: auto;
+    object-fit: cover !important;
 }
 
 .logo-text-group {
@@ -1154,6 +1155,12 @@ h1, h2, h3 {
         height: 55px !important;
         width: auto !important;
         display: block !important;
+        width: 60px !important;  /* Ajuste o tamanho conforme o seu Header */
+        height: 60px !important; /* Altura igual à largura para ser um círculo perfeito */
+        object-fit: cover !important;
+        border-radius: 50%;
+        border: 1px solid #d4af37;
+        background-color: transparent !important;
     }
 
     .logo-text-group {
